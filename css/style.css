@@ -1,0 +1,106 @@
+/* Custom transitions and animations for the Himalayan Orchard Retreat website */
+
+/* Hiding scrollbars across browsers */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Toast Animations */
+@keyframes toast-in {
+    from {
+        transform: translateY(1rem) scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-out {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-1rem) scale(0.95);
+        opacity: 0;
+    }
+}
+
+.kalam-regular {
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.animate-toast-in {
+    animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-toast-out {
+    animation: toast-out 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism custom effects */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-effect-dark {
+    background: rgba(27, 48, 34, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Drawer transitions */
+.drawer-backdrop {
+    transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drawer-content {
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth zoom on hover */
+.zoom-hover {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zoom-hover:hover {
+    transform: scale(1.05);
+}
+
+/* 3D Visual Credit Card Flip Styles */
+.card-perspective {
+    perspective: 1000px;
+}
+
+.credit-card-inner {
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.credit-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-face-back {
+    transform: rotateY(180deg);
+}

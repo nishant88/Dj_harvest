@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Orchard Store | DJ's Harvest Himalayan Homestays</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .product-card-shadow {
+            box-shadow: 0px 20px 40px rgba(27, 48, 34, 0.05);
+        }
+
+        .apple-red-accent {
+            color: #b02d21;
+        }
+
+        .bg-apple-red {
+            background-color: #b02d21;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-white/20 shadow-sm">
+        <div class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
+            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
+                href="index.html">
+                <span class="font-kalam font-bold text-3xl tracking-wide text-primary bg-[#fff3] px-lg py-xs rounded-md">DJ's Harvest</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-xl">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="stay.html">Stay</a>
+                <a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1"
+                    href="shop.html">Shop</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="stories.html">Stories</a>
+            </div>
+
+            <div class="flex items-center gap-md">
+                <!-- Search box toggler -->
+                <button
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary p-xs cursor-pointer">search</button>
+
+                <!-- Shopping Bag icon -->
+                <button
+                    class="cart-toggle-btn material-symbols-outlined text-on-surface-variant hover:text-primary p-xs relative cursor-pointer">
+                    shopping_bag
+                    <span
+                        class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+
+                <button
+                    class="booking-trigger-btn hidden md:block bg-secondary text-on-secondary px-lg py-xs rounded-lg font-button-text text-button-text hover:opacity-80 transition-all active:scale-95">Book
+                    Now</button>
+                <button class="mobile-menu-trigger md:hidden text-primary flex items-center">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-3xl md:pt-0 h-[819px] min-h-[600px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center"
+                data-alt="A cinematic, sun-drenched wide shot of a lush Himalayan DJ's Harvest."
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGkCuUFE5AW2hv287NOhu9ogSPACzkQdHaXil7Iq1DjxeDlPv2YjRv9pDwLZ0STtHhHnI6CyPMfjJ-tnVruPso8Wxuz-FPwqLQNoNGzuNQEVuDYs7uqHZx3ndnzNPXs26ojZZciC9C4PQoO7noswIpGJRJW8T1w7AMsAHLb7S-7UG1hLlLs1sXJ-E-hmS-kLy7ERH2Jplyuwm-w0zGsjD1HXtDam4hdd8gXv_VjQi2VKi-3ClrhDPBFg');">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-lg w-full">
+            <div class="max-w-2xl">
+                <span class="font-label-caps text-label-caps text-secondary mb-md block">Season's Fresh Harvest</span>
+                <h1
+                    class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-lg">
+                    From our Trees <br />to your Table</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">Experience the unadulterated
+                    taste of the Himalayas. Our organic produce is hand-picked at peak ripeness and shipped directly
+                    from our orchards to your doorstep.</p>
+                <div class="flex flex-wrap gap-md">
+                    <a href="#seasonal-collection"
+                        class="bg-primary text-on-primary px-2xl py-md rounded-lg font-button-text text-button-text hover:opacity-90 transition-all inline-flex items-center gap-sm">
+                        Shop Now <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                    <a href="stories.html"
+                        class="border-2 border-primary text-primary px-2xl py-md rounded-lg font-button-text text-button-text hover:bg-primary/5 transition-all inline-flex items-center justify-center">
+                        Our Story
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Grid -->
+    <section class="py-3xl max-w-7xl mx-auto px-lg">
+        <div class="flex justify-between items-end mb-2xl">
+            <div>
+                <h2 class="font-headline-md text-headline-md text-primary mb-sm">Explore the Harvest</h2>
+                <p class="text-on-surface-variant">Selected treasures from our high-altitude organic farms.</p>
+            </div>
+            <a class="font-label-caps text-label-caps text-primary border-b border-primary hover:opacity-70 transition-opacity hidden md:block"
+                href="#">View All Categories</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+            <!-- Fresh Apples -->
+            <button
+                class="category-filter-btn group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm transition-transform hover:-translate-y-1 text-left w-full cursor-pointer"
+                data-category="apples">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAp1aD-sR1vIB7MsoiPES6MZIfTaIiCJno2qNb_EfSjX0sTFQLnpDlZ5LUZaoUuQUBV0PS9rLDm9TIL0IjO_o8H7WSTf8qmIUPkalpUkRkwRt2cVeHm8QwtqVtfzWcvLuZPTxbdQ-TnuwHh6lPdE_aBjf_f7edyJF37-D6fZfxfH0xfU-otH3Kkxwo8VQR-a09QidOq0miRRGfYFwL4-ZEoK1sMa4rbLdMhGPCR5met1V7XmFKeCClhA');">
+                </div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute bottom-0 left-0 p-lg w-full">
+                    <h3 class="font-headline-sm text-headline-sm text-white">Fresh Apples</h3>
+                </div>
+            </button>
+            <!-- Organic Honey -->
+            <button
+                class="category-filter-btn group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm transition-transform hover:-translate-y-1 text-left w-full cursor-pointer"
+                data-category="honey">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAklohEnFKZ1srckkLfwwjEG6Ra4G_jmteMV-U-7AG1DtwDjbI_BW890_uU7UofBbct8kgLc3N1qlfKgHitcBCh71uhxEb0BDh0JUUblaOPdMXRyQxoUVCoiwrwlhnFImfYPxrJ8zugVgFWwjs0T5l1Sg23pOXuBxO8P6QiRWCZUxP9hvkBMICxUut3dIGPMPsXQKx8K-uQclQfa8ztnOoInjp3usF-vtvFSeJ9RHiuCepPL6-5wKzvqQ');">
+                </div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute bottom-0 left-0 p-lg w-full">
+                    <h3 class="font-headline-sm text-headline-sm text-white">Organic Honey</h3>
+                </div>
+            </button>
+            <!-- Apple Jam -->
+            <button
+                class="category-filter-btn group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm transition-transform hover:-translate-y-1 text-left w-full cursor-pointer"
+                data-category="jams">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBx__bZiN5xjPWjSk82N54m594-YYCoCby0xArYMBVjpxgk1wxjrbBSPDvBLejbfzodv0cES87-ciUNLF6iHHgto7wRJefPQ1ZgEhlBha9b--GIeZA-y84Q1WViNDv1TPUNG1b5tgK3gfBtvTlftKwfFcKxa2kor4adAdXPYRJK8t2FKmmieZTZqadayHV5EWSFqr3jvgMDa4CbfmiG36vlcj7C15TKXGzm8RLzcChEDYFYeVjCP3NS5Q');">
+                </div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute bottom-0 left-0 p-lg w-full">
+                    <h3 class="font-headline-sm text-headline-sm text-white">Apple Jam</h3>
+                </div>
+            </button>
+            <!-- Gift Hampers -->
+            <button
+                class="category-filter-btn group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm transition-transform hover:-translate-y-1 text-left w-full cursor-pointer"
+                data-category="hampers">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXIZyQTR4tLNlREBqt83T-4wXUySYU1x0rxaTs06S1QxeOh5Qq5dJ-4IMVrluelW3H-hMbt5zOjehbmBTyzO1wITfnh43OTasWshkFmspSQAdTqvTNq48zTepZDTMJUJjzco3FcEzS6CtRsk6rrT0lFLhxnD3l9yl13rsDxRKDCIaZbw2mI4QKJ8lnNLQBMlHibTH4wJQV_zNEOlEl7fF01lo7aCZtjdTG_S53GfBT70YfB7tZeHk89A');">
+                </div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute bottom-0 left-0 p-lg w-full">
+                    <h3 class="font-headline-sm text-headline-sm text-white">Gift Hampers</h3>
+                </div>
+            </button>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section id="seasonal-collection" class="bg-surface-container-low py-3xl px-lg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-2xl">
+                <h2 class="font-headline-md text-headline-md text-primary mb-md">Our Seasonal Collection</h2>
+                <div class="flex justify-center gap-md flex-wrap" id="collection-filters">
+                    <button
+                        class="filter-tag-btn px-lg py-xs rounded-full bg-primary text-on-primary font-label-caps text-label-caps cursor-pointer"
+                        data-filter="all">All Products</button>
+                    <button
+                        class="filter-tag-btn px-lg py-xs rounded-full bg-white text-on-surface-variant hover:bg-surface-variant font-label-caps text-label-caps transition-colors cursor-pointer"
+                        data-filter="best-sellers">Best Sellers</button>
+                    <button
+                        class="filter-tag-btn px-lg py-xs rounded-full bg-white text-on-surface-variant hover:bg-surface-variant font-label-caps text-label-caps transition-colors cursor-pointer"
+                        data-filter="new-arrivals">New Arrivals</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-lg" id="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden product-card-shadow group"
+                    data-category="apples" data-tags="best-sellers">
+                    <div class="relative aspect-square overflow-hidden bg-surface">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Isolated studio shot of a perfectly shaped Red Delicious apple."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBluWLHE4WwErnFRrHj8xPvZYfi_ogA8mwWfLKLcYy7BkfP71L2kxzh5wvqXFjmQ_q0zWziR9rsyBiXoKl2CrjFHDPHo5z9B_3m_E0Bd1riMqt1I_K83LAv87qx8mqaEMgpG9HgFCgE-d9Qx5JSHDxUKlcHCstXBPEKDxjAf5CB_AhJgDpzv91IOKRTht5FBymVP-s7r1zApVx0WhOJu0WGH6XNNbV97W22e6ijKYKsleHADKRsXkr91Q');">
+                        </div>
+                        <div
+                            class="absolute top-md right-md bg-white/90 backdrop-blur px-sm py-1 rounded text-[10px] font-bold uppercase tracking-widest text-primary">
+                            Limited Stock</div>
+
+                        <!-- Overlay icons -->
+                        <div
+                            class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+                            <button
+                                class="quick-view-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 cursor-pointer"
+                                data-id="1">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </button>
+                            <button
+                                class="wishlist-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75 cursor-pointer"
+                                data-id="1" data-title="Royal Delicious">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <div class="flex justify-between items-start mb-xs">
+                            <h3 class="product-title font-headline-sm text-[20px] text-primary font-medium">Royal
+                                Delicious</h3>
+                            <span class="font-bold apple-red-accent font-label-caps">₹12.00</span>
+                        </div>
+                        <div class="flex items-center gap-xs mb-md">
+                            <div class="flex text-amber-400">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star_half</span>
+                            </div>
+                            <span class="text-[12px] text-on-surface-variant font-bold">(128)</span>
+                        </div>
+                        <button
+                            class="add-to-cart-btn w-full bg-primary text-on-primary py-sm rounded-lg font-button-text text-button-text transition-all hover:bg-primary-container cursor-pointer"
+                            data-product-id="1" data-product-title="Royal Delicious" data-product-price="12.00"
+                            data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBluWLHE4WwErnFRrHj8xPvZYfi_ogA8mwWfLKLcYy7BkfP71L2kxzh5wvqXFjmQ_q0zWziR9rsyBiXoKl2CrjFHDPHo5z9B_3m_E0Bd1riMqt1I_K83LAv87qx8mqaEMgpG9HgFCgE-d9Qx5JSHDxUKlcHCstXBPEKDxjAf5CB_AhJgDpzv91IOKRTht5FBymVP-s7r1zApVx0WhOJu0WGH6XNNbV97W22e6ijKYKsleHADKRsXkr91Q">Add
+                            to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden product-card-shadow group"
+                    data-category="honey" data-tags="new-arrivals">
+                    <div class="relative aspect-square overflow-hidden bg-surface">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Luxury glass jar of Wild Himalayan Honey."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9qMX2u_m8tbiN1vUhNWVwPbpYQsnGTWIPzXQbvID7m-xv4ueTPVHmPfzJET71oX9eF0e3WQEIJ5zu7Ws_08JEqDgni7slLFRGYukSVQNsQaAgLfIQEY7o6ZLKpA8B6K7qQFBhaIMZLwaqsVknQnTJSJ4CBoHEOprbtijsZ8MlQDjIgNYhwy-hjLuu6Fu1SfaTVs2WRhOzU9Kv5Ob-hhWx9F7sC1I5XgWM6hjc851KfC7lfB9EioxkCw');">
+                        </div>
+                        <div
+                            class="absolute top-md right-md bg-secondary text-on-secondary px-sm py-1 rounded text-[10px] font-bold uppercase tracking-widest">
+                            New</div>
+
+                        <!-- Overlay icons -->
+                        <div
+                            class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+                            <button
+                                class="quick-view-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 cursor-pointer"
+                                data-id="2">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </button>
+                            <button
+                                class="wishlist-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75 cursor-pointer"
+                                data-id="2" data-title="Wild Forest Honey">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <div class="flex justify-between items-start mb-xs">
+                            <h3 class="product-title font-headline-sm text-[20px] text-primary font-medium">Wild Forest
+                                Honey</h3>
+                            <span class="font-bold apple-red-accent font-label-caps">₹18.50</span>
+                        </div>
+                        <div class="flex items-center gap-xs mb-md">
+                            <div class="flex text-amber-400">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <span class="text-[12px] text-on-surface-variant font-bold">(42)</span>
+                        </div>
+                        <button
+                            class="add-to-cart-btn w-full bg-primary text-on-primary py-sm rounded-lg font-button-text text-button-text transition-all hover:bg-primary-container cursor-pointer"
+                            data-product-id="2" data-product-title="Wild Forest Honey" data-product-price="18.50"
+                            data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuC9qMX2u_m8tbiN1vUhNWVwPbpYQsnGTWIPzXQbvID7m-xv4ueTPVHmPfzJET71oX9eF0e3WQEIJ5zu7Ws_08JEqDgni7slLFRGYukSVQNsQaAgLfIQEY7o6ZLKpA8B6K7qQFBhaIMZLwaqsVknQnTJSJ4CBoHEOprbtijsZ8MlQDjIgNYhwy-hjLuu6Fu1SfaTVs2WRhOzU9Kv5Ob-hhWx9F7sC1I5XgWM6hjc851KfC7lfB9EioxkCw">Add
+                            to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden product-card-shadow group"
+                    data-category="jams" data-tags="best-sellers">
+                    <div class="relative aspect-square overflow-hidden bg-surface">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Chunky Himalayan apple preserve."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWGvp9u6_Y9nXNo04Ph-FvYoKcuGEfcXv4mdnrTsPCGOFhftjHkNBzqutZ3tCm4aPZ61UZBe9xq5CkqtugrxO2hXfWwo-re2TRPMWLNPYcrQ43vxf4RVEuspcBr_FIaeP_2_ria_Ur8Kjw7BTFGjvWX42nhGjXm5nfVFiRPMBRsr1Ef8_UVnPlolca_-GO6ZBDUTpbDvcr-fAwSl7zyDHVVwiN6kqDiLpYrXJvtT1FH-RNy2ROUV0EGA');">
+                        </div>
+
+                        <!-- Overlay icons -->
+                        <div
+                            class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+                            <button
+                                class="quick-view-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 cursor-pointer"
+                                data-id="3">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </button>
+                            <button
+                                class="wishlist-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75 cursor-pointer"
+                                data-id="3" data-title="Spiced Apple Preserve">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <div class="flex justify-between items-start mb-xs">
+                            <h3 class="product-title font-headline-sm text-[20px] text-primary font-medium">Spiced Apple
+                                Preserve</h3>
+                            <span class="font-bold apple-red-accent font-label-caps">₹14.00</span>
+                        </div>
+                        <div class="flex items-center gap-xs mb-md">
+                            <div class="flex text-amber-400">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]">star</span>
+                            </div>
+                            <span class="text-[12px] text-on-surface-variant font-bold">(86)</span>
+                        </div>
+                        <button
+                            class="add-to-cart-btn w-full bg-primary text-on-primary py-sm rounded-lg font-button-text text-button-text transition-all hover:bg-primary-container cursor-pointer"
+                            data-product-id="3" data-product-title="Spiced Apple Preserve" data-product-price="14.00"
+                            data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAWGvp9u6_Y9nXNo04Ph-FvYoKcuGEfcXv4mdnrTsPCGOFhftjHkNBzqutZ3tCm4aPZ61UZBe9xq5CkqtugrxO2hXfWwo-re2TRPMWLNPYcrQ43vxf4RVEuspcBr_FIaeP_2_ria_Ur8Kjw7BTFGjvWX42nhGjXm5nfVFiRPMBRsr1Ef8_UVnPlolca_-GO6ZBDUTpbDvcr-fAwSl7zyDHVVwiN6kqDiLpYrXJvtT1FH-RNy2ROUV0EGA">Add
+                            to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden product-card-shadow group"
+                    data-category="hampers" data-tags="new-arrivals">
+                    <div class="relative aspect-square overflow-hidden bg-surface">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="A curated gift hamper in a premium white box."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZNGkk-kumVXvNj2V8bg2vo20LPRJjMbcdfB80YPY0IH9KU8vVaFVFSLiA2hQJgMtRP4KXSQsnJtMksB8_YSGzCrQu06vjs7cURpOriNig0DOdvUcJpgVqOSmMrlWcDYMRMm6kcCDAnOASHTqd3cj-jz03kYQx_3VqC_47_8hXlUMNbil5BH39PMs9YyRPrmGVS8o3ndkEKn4RzoG3ZmN-O4oFbD0S9_YeQMijO2f7lIkuDddJYkrRjQ');">
+                        </div>
+                        <div
+                            class="absolute top-md right-md bg-primary text-on-primary px-sm py-1 rounded text-[10px] font-bold uppercase tracking-widest">
+                            Seasonal</div>
+
+                        <!-- Overlay icons -->
+                        <div
+                            class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+                            <button
+                                class="quick-view-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 cursor-pointer"
+                                data-id="4">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </button>
+                            <button
+                                class="wishlist-btn bg-white text-primary p-md rounded-full shadow-lg hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75 cursor-pointer"
+                                data-id="4" data-title="Harvest Gift Box">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-lg">
+                        <div class="flex justify-between items-start mb-xs">
+                            <h3 class="product-title font-headline-sm text-[20px] text-primary font-medium">Harvest Gift
+                                Box</h3>
+                            <span class="font-bold apple-red-accent font-label-caps">₹45.00</span>
+                        </div>
+                        <div class="flex items-center gap-xs mb-md">
+                            <div class="flex text-amber-400">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <span class="text-[12px] text-on-surface-variant font-bold">(31)</span>
+                        </div>
+                        <button
+                            class="add-to-cart-btn w-full bg-primary text-on-primary py-sm rounded-lg font-button-text text-button-text transition-all hover:bg-primary-container cursor-pointer"
+                            data-product-id="4" data-product-title="Harvest Gift Box" data-product-price="45.00"
+                            data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDZNGkk-kumVXvNj2V8bg2vo20LPRJjMbcdfB80YPY0IH9KU8vVaFVFSLiA2hQJgMtRP4KXSQsnJtMksB8_YSGzCrQu06vjs7cURpOriNig0DOdvUcJpgVqOSmMrlWcDYMRMm6kcCDAnOASHTqd3cj-jz03kYQx_3VqC_47_8hXlUMNbil5BH39PMs9YyRPrmGVS8o3ndkEKn4RzoG3ZmN-O4oFbD0S9_YeQMijO2f7lIkuDddJYkrRjQ">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-2xl text-center">
+                <button
+                    class="border-b-2 border-primary text-primary font-label-caps text-label-caps pb-1 hover:opacity-70 transition-opacity cursor-pointer">Discover
+                    More Treasures</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="py-3xl max-w-7xl mx-auto px-lg">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-xl mb-3xl">
+            <div class="text-center p-lg">
+                <div class="bg-primary/5 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-lg">
+                    <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+                </div>
+                <h4 class="font-headline-sm text-[20px] text-primary mb-sm">Direct Shipping</h4>
+                <p class="text-on-surface-variant">Carefully packed and delivered from our Himalayan foothills to your
+                    doorstep within 48 hours of harvest.</p>
+            </div>
+            <div class="text-center p-lg">
+                <div class="bg-primary/5 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-lg">
+                    <span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+                </div>
+                <h4 class="font-headline-sm text-[20px] text-primary mb-sm">Certified Organic</h4>
+                <p class="text-on-surface-variant">Grown without synthetic pesticides or fertilizers, maintaining the
+                    natural integrity of the soil and fruit.</p>
+            </div>
+            <div class="text-center p-lg">
+                <div class="bg-primary/5 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-lg">
+                    <span class="material-symbols-outlined text-primary text-3xl">eco</span>
+                </div>
+                <h4 class="font-headline-sm text-[20px] text-primary mb-sm">Zero-Waste Packing</h4>
+                <p class="text-on-surface-variant">Our packaging is 100% biodegradable and recycled, ensuring our
+                    mountains stay as beautiful as we found them.</p>
+            </div>
+        </div>
+
+        <!-- Bulk Order Bento -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-lg h-auto md:h-[400px]">
+            <div class="md:col-span-8 relative rounded-2xl overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Crater of red delicious apples."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMY9FlsBaTwGGRyUQsdoqE9b_XaGCbAfZFxT1DUDKlkCmVa1b_0MGgiBjATf64FFTGDzME5N-ipfTC_0T2D5ho5vTsy9d71o0Zdvp_yqPhI6yP6bfv3UF8Zd5b3EyJCn8Fk2-Siv0U5TqvN_5_hhNiPnSFEk3o8qrUo9wJqNsNohQdoIWxt-Ql7bSQlaS_Eaafv56UAzvsmlqxi6qs2SzBOahsHXY9U3EppGvW7YJ5Oo8y6V4Y0jemcg');">
+                </div>
+                <div class="absolute inset-0 bg-primary/40"></div>
+                <div class="relative h-full flex flex-col justify-end p-2xl">
+                    <h3 class="font-display-lg-mobile text-display-lg-mobile text-white mb-md">Bulk &amp; Corporate
+                        Gifting</h3>
+                    <p class="text-white/80 max-w-lg mb-lg">Special rates for wholesale orders and premium corporate
+                        hampers customized for your clients.</p>
+                    <div>
+                        <button
+                            class="bg-white text-primary px-xl py-md rounded-lg font-button-text text-button-text hover:bg-surface-variant transition-all cursor-pointer">Enquire
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="md:col-span-4 bg-primary-container rounded-2xl p-2xl flex flex-col justify-center text-on-primary-container">
+                <span class="material-symbols-outlined text-4xl mb-lg">support_agent</span>
+                <h3 class="font-headline-md text-headline-md text-white mb-md">Need Help?</h3>
+                <p class="text-on-primary-container/80 mb-xl">Our orchard team is available to assist with custom orders
+                    or shipping queries.</p>
+                <a class="font-bold text-white flex items-center gap-sm hover:translate-x-2 transition-transform"
+                    href="mailto:harvest@appleorchards.com">
+                    harvest@appleorchards.com
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Booking Indicator -->
+    <!-- <div class="booking-trigger-btn fixed bottom-md right-md rounded-xl p-md bg-surface/90 backdrop-blur-2xl border border-white/20 shadow-2xl z-50 flex flex-row items-center gap-md hidden md:flex hover:-translate-y-1 transition-transform cursor-pointer">
+        <div class="flex flex-col pr-md border-r border-on-surface-variant/10">
+            <span class="font-label-caps text-[10px] text-on-surface-variant">Current Availability</span>
+            <span class="font-headline-sm text-[16px] text-primary">Himalayan Peak Harvest</span>
+        </div>
+        <button class="booking-trigger-btn bg-primary text-on-primary px-lg py-sm rounded-lg font-button-text text-[12px] flex items-center gap-xs">
+            <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+            Book Now
+        </button>
+    </div> -->
+
+    <!-- Quick View Modal Container -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Backdrop -->
+            <div id="quick-view-backdrop" class="fixed inset-0 bg-black/50 transition-opacity duration-350"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Panel -->
+            <div id="quick-view-panel"
+                class="relative inline-block align-bottom bg-[#ffffff] rounded-2xl text-left overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-350 sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-outline-variant">
+                <button id="close-quick-view"
+                    class="absolute top-md right-md text-primary hover:opacity-75 p-sm z-10 flex items-center bg-white/70 backdrop-blur-sm rounded-full">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="h-80 md:h-[400px]">
+                        <img id="qv-image" src="" alt="" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-lg flex flex-col justify-between">
+                        <div>
+                            <span id="qv-tag"
+                                class="font-label-caps text-[10px] text-secondary uppercase font-bold tracking-widest block mb-xs">APPLES</span>
+                            <h3 id="qv-title" class="font-headline-sm text-headline-sm text-primary mb-xs">Product Title
+                            </h3>
+                            <div class="flex text-amber-400 mb-md">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p id="qv-price" class="font-bold text-lg text-secondary mb-md font-label-caps">₹12.00</p>
+                            <p id="qv-desc" class="text-sm text-on-surface-variant leading-relaxed mb-lg">Description
+                                content goes here.</p>
+                        </div>
+                        <button id="qv-add-btn"
+                            class="w-full bg-primary text-on-primary py-md rounded-lg font-button-text text-button-text uppercase tracking-widest transition-all hover:bg-primary-container cursor-pointer">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low w-full rounded-t-xl mt-3xl">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <a class="font-headline-sm text-headline-sm text-primary mb-lg block" href="index.html">Apple
+                    Orchards</a>
+                <p class="text-on-surface-variant font-body-md text-body-md">Sustainably grown, mountain-fresh produce
+                    from the heart of Himachal Pradesh.</p>
+            </div>
+            <div>
+                <h4 class="font-label-caps text-label-caps text-primary mb-lg">The Harvest</h4>
+                <ul class="flex flex-col gap-sm">
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="#">Fresh Apples</a></li>
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="#">Organic Honey</a></li>
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="#">Artisanal Jams</a></li>
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="#">Bulk Orders</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-caps text-label-caps text-primary mb-lg">Journal</h4>
+                <ul class="flex flex-col gap-sm">
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="stories.html">Mountain Life Journal</a></li>
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="stay.html">Stay with Us</a></li>
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="stories.html">Our Heritage</a></li>
+                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
+                            href="stories.html">Sustainability</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-caps text-label-caps text-primary mb-lg">Join our Orchard Club</h4>
+                <p class="text-on-surface-variant mb-md text-[14px]">Get exclusive early access to the harvest and
+                    stories from the mountains.</p>
+                <form class="flex gap-xs">
+                    <input
+                        class="bg-white border border-outline-variant rounded-lg px-md py-sm w-full text-sm focus:ring-1 focus:ring-primary outline-none"
+                        placeholder="Email address" type="email" required />
+                    <button
+                        class="bg-primary text-on-primary p-sm rounded-lg hover:opacity-90 transition-opacity cursor-pointer flex items-center">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-lg py-lg border-t border-on-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-md">
+            <span class="text-[12px] text-on-surface-variant">© 2024 DJ's Harvest Himalayan Homestays. All rights
+                reserved.</span>
+            <div class="flex gap-lg">
+                <a class="text-[12px] text-on-surface-variant hover:text-primary underline-offset-4 hover:underline"
+                    href="#">Privacy Policy</a>
+                <a class="text-[12px] text-on-surface-variant hover:text-primary underline-offset-4 hover:underline"
+                    href="#">Shipping Policy</a>
+                <a class="text-[12px] text-on-surface-variant hover:text-primary underline-offset-4 hover:underline"
+                    href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sticky Navbar shadow shift
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+            });
+
+            // ==========================================
+            // PRODUCT PRODUCTS FILTERING
+            // ==========================================
+            const filterBtns = document.querySelectorAll('.filter-tag-btn');
+            const catBtns = document.querySelectorAll('.category-filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            let currentFilterVal = 'all';
+            let currentFilterAttr = 'data-tags';
+
+            function filterCollection(filterType, attribute = 'data-tags') {
+                currentFilterVal = filterType;
+                currentFilterAttr = attribute;
+
+                productCards.forEach(card => {
+                    const cardAttr = card.getAttribute(attribute) || '';
+                    const match = filterType === 'all' || cardAttr.split(' ').includes(filterType) || card.getAttribute('data-category') === filterType;
+
+                    if (match) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            // Check latest filter values to prevent race condition bugs
+                            const curCardAttr = card.getAttribute(currentFilterAttr) || '';
+                            const curMatch = currentFilterVal === 'all' || curCardAttr.split(' ').includes(currentFilterVal) || card.getAttribute('data-category') === currentFilterVal;
+                            if (!curMatch) {
+                                card.style.display = 'none';
+                            }
+                        }, 250);
+                    }
+                });
+            }
+
+            // Bind Collection buttons (All, Best Sellers, New Arrivals)
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button state
+                    filterBtns.forEach(b => {
+                        b.className = "filter-tag-btn px-lg py-xs rounded-full bg-white text-on-surface-variant hover:bg-surface-variant font-label-caps text-label-caps transition-colors cursor-pointer";
+                    });
+                    btn.className = "filter-tag-btn px-lg py-xs rounded-full bg-primary text-on-primary font-label-caps text-label-caps cursor-pointer";
+
+                    const filter = btn.getAttribute('data-filter');
+                    filterCollection(filter, 'data-tags');
+                });
+            });
+
+            // Bind Category buttons
+            catBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const category = btn.getAttribute('data-category');
+
+                    // Reset Collection buttons highlight
+                    filterBtns.forEach(b => {
+                        b.className = "filter-tag-btn px-lg py-xs rounded-full bg-white text-on-surface-variant hover:bg-surface-variant font-label-caps text-label-caps transition-colors cursor-pointer";
+                    });
+
+                    filterCollection(category, 'data-category');
+                    // Scroll down to products grid
+                    document.getElementById('seasonal-collection').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // ==========================================
+            // QUICK VIEW MODAL IMPLEMENTATION
+            // ==========================================
+            const qvModal = document.getElementById('quick-view-modal');
+            const qvBackdrop = document.getElementById('quick-view-backdrop');
+            const qvPanel = document.getElementById('quick-view-panel');
+            const closeQv = document.getElementById('close-quick-view');
+
+            const productsData = {
+                '1': {
+                    title: 'Royal Delicious',
+                    price: '₹12.00',
+                    tag: 'APPLES',
+                    desc: 'Peak Harvest: October. Cultivated at 7,800 feet. Royal Delicious is our hallmark apple, known for its deep crimson, structural skin and intense, honeyed sweetness. Every box is packed in sustainable wood shavings and shipped raw.',
+                    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBluWLHE4WwErnFRrHj8xPvZYfi_ogA8mwWfLKLcYy7BkfP71L2kxzh5wvqXFjmQ_q0zWziR9rsyBiXoKl2CrjFHDPHo5z9B_3m_E0Bd1riMqt1I_K83LAv87qx8mqaEMgpG9HgFCgE-d9Qx5JSHDxUKlcHCstXBPEKDxjAf5CB_AhJgDpzv91IOKRTht5FBymVP-s7r1zApVx0WhOJu0WGH6XNNbV97W22e6ijKYKsleHADKRsXkr91Q',
+                    priceNum: '12.00'
+                },
+                '2': {
+                    title: 'Wild Forest Honey',
+                    price: '₹18.50',
+                    tag: 'HONEY',
+                    desc: 'Harvested by local gatherers in the high altitude oak pine forests of Kotgarh. This wild, unfiltered honey carries notes of mountain wildflowers and offers a rich, dense consistency and raw digestive benefits.',
+                    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC9qMX2u_m8tbiN1vUhNWVwPbpYQsnGTWIPzXQbvID7m-xv4ueTPVHmPfzJET71oX9eF0e3WQEIJ5zu7Ws_08JEqDgni7slLFRGYukSVQNsQaAgLfIQEY7o6ZLKpA8B6K7qQFBhaIMZLwaqsVknQnTJSJ4CBoHEOprbtijsZ8MlQDjIgNYhwy-hjLuu6Fu1SfaTVs2WRhOzU9Kv5Ob-hhWx9F7sC1I5XgWM6hjc851KfC7lfB9EioxkCw',
+                    priceNum: '18.50'
+                },
+                '3': {
+                    title: 'Spiced Apple Preserve',
+                    price: '₹14.00',
+                    tag: 'JAMS',
+                    desc: 'Small-batch, slow-cooked preserves made using heirloom apples. Lightly spiced with mountain cinnamon and green cardamom. Contains zero artificial preservatives or sulfur dioxide.',
+                    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWGvp9u6_Y9nXNo04Ph-FvYoKcuGEfcXv4mdnrTsPCGOFhftjHkNBzqutZ3tCm4aPZ61UZBe9xq5CkqtugrxO2hXfWwo-re2TRPMWLNPYcrQ43vxf4RVEuspcBr_FIaeP_2_ria_Ur8Kjw7BTFGjvWX42nhGjXm5nfVFiRPMBRsr1Ef8_UVnPlolca_-GO6ZBDUTpbDvcr-fAwSl7zyDHVVwiN6kqDiLpYrXJvtT1FH-RNy2ROUV0EGA',
+                    priceNum: '14.00'
+                },
+                '4': {
+                    title: 'Harvest Gift Box',
+                    price: '₹45.00',
+                    tag: 'GIFT HAMPERS',
+                    desc: 'A premium, handcrafted organic selection representing the harvest. Includes 6 selected Crimson Red apples, a jar of Wild Forest Honey, a jar of Spiced Preserve, and dried local berries, wrapped in our signature forest-green box.',
+                    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZNGkk-kumVXvNj2V8bg2vo20LPRJjMbcdfB80YPY0IH9KU8vVaFVFSLiA2hQJgMtRP4KXSQsnJtMksB8_YSGzCrQu06vjs7cURpOriNig0DOdvUcJpgVqOSmMrlWcDYMRMm6kcCDAnOASHTqd3cj-jz03kYQx_3VqC_47_8hXlUMNbil5BH39PMs9YyRPrmGVS8o3ndkEKn4RzoG3ZmN-O4oFbD0S9_YeQMijO2f7lIkuDddJYkrRjQ',
+                    priceNum: '45.00'
+                }
+            };
+
+            function openQuickView(id) {
+                const prod = productsData[id];
+                if (!prod) return;
+
+                document.getElementById('qv-image').src = prod.image;
+                document.getElementById('qv-image').alt = prod.title;
+                document.getElementById('qv-title').textContent = prod.title;
+                document.getElementById('qv-price').textContent = prod.price;
+                document.getElementById('qv-tag').textContent = prod.tag;
+                document.getElementById('qv-desc').textContent = prod.desc;
+
+                // Wire up modal's Add to Cart button
+                const addBtn = document.getElementById('qv-add-btn');
+                addBtn.onclick = () => {
+                    if (typeof addProductToCart === 'function') {
+                        addProductToCart({
+                            id: id,
+                            title: prod.title,
+                            price: prod.priceNum,
+                            image: prod.image
+                        });
+                        closeQuickViewModal();
+                        if (typeof openCartDrawer === 'function') {
+                            openCartDrawer();
+                        }
+                    }
+                };
+
+                qvModal.classList.remove('hidden');
+                // Force reflow
+                qvModal.offsetHeight;
+
+                qvBackdrop.classList.add('ease-out', 'duration-300', 'opacity-100');
+                qvPanel.classList.remove('scale-95', 'opacity-0');
+                qvPanel.classList.add('scale-100', 'opacity-100');
+            }
+
+            function closeQuickViewModal() {
+                qvBackdrop.classList.remove('opacity-100');
+                qvPanel.classList.remove('scale-100', 'opacity-100');
+                qvPanel.classList.add('scale-95', 'opacity-0');
+
+                setTimeout(() => {
+                    qvModal.classList.add('hidden');
+                }, 300);
+            }
+
+            // Bind Quick View buttons
+            document.querySelectorAll('.quick-view-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-id');
+                    openQuickView(id);
+                });
+            });
+
+            if (closeQv) closeQv.addEventListener('click', closeQuickViewModal);
+            if (qvBackdrop) qvBackdrop.addEventListener('click', closeQuickViewModal);
+
+            // ==========================================
+            // WISHLIST INTERACTION
+            // ==========================================
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const title = btn.getAttribute('data-title');
+                    const icon = btn.querySelector('span');
+
+                    if (icon.textContent === 'favorite') {
+                        icon.textContent = 'heart_broken';
+                        btn.classList.add('text-secondary');
+                        showToast(`Added ${title} to your Wishlist!`, 'success');
+                    } else {
+                        icon.textContent = 'favorite';
+                        btn.classList.remove('text-secondary');
+                        showToast(`Removed ${title} from your Wishlist.`, 'info');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

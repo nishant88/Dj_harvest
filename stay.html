@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Sanctuaries | DJ's Harvest Himalayan Homestays</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=Manrope:wght@600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(251, 249, 246, 0) 0%, rgba(251, 249, 246, 1) 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-white/20 shadow-sm">
+        <nav class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
+            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
+                href="index.html">
+                <span class="font-kalam font-bold text-3xl tracking-wide text-primary bg-[#fff3] px-lg py-xs rounded-md">DJ's Harvest</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-xl">
+                <a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps"
+                    href="stay.html">Stay</a>
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
+                    href="shop.html">Shop</a>
+                <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
+                    href="stories.html">Stories</a>
+
+                <!-- Cart Icon -->
+                <button
+                    class="cart-toggle-btn text-on-surface-variant hover:text-primary p-xs relative flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span
+                        class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+
+            <!-- Actions & Mobile Menu -->
+            <div class="flex items-center gap-md">
+                <button
+                    class="booking-trigger-btn bg-secondary text-on-secondary px-lg py-sm rounded-lg font-button-text text-button-text hover:opacity-80 transition-opacity duration-300 active:scale-95">Book
+                    Now</button>
+                <button class="mobile-menu-trigger md:hidden text-primary flex items-center">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-3xl">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-lg mb-2xl">
+            <div class="max-w-3xl">
+                <span class="font-label-caps text-label-caps text-on-primary-container mb-md block">HIMALAYAN
+                    HERITAGE</span>
+                <h1 class="font-display-lg text-display-lg md:text-display-lg mb-lg text-primary leading-tight">Our
+                    Sanctuaries</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Discover architectural poetry nestled within ancient apple groves. From hand-carved stone cottages
+                    to airy glass treehouses, each sanctuary is designed for deep stillness and mountain communion.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dynamic Filter Bar -->
+        <section class="sticky top-[72px] z-40 mb-2xl px-lg">
+            <div
+                class="max-w-7xl mx-auto bg-surface/90 backdrop-blur-2xl rounded-xl border border-white/20 shadow-[0px_20px_40px_rgba(27,48,34,0.05)] p-md">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-md items-center">
+                    <div class="flex flex-col gap-xs px-md">
+                        <label class="font-label-caps text-[10px] text-on-surface-variant font-bold">CHECK-IN</label>
+                        <div class="flex items-center gap-xs text-primary font-medium">
+                            <span class="material-symbols-outlined text-md">calendar_today</span>
+                            <input type="date" id="filter-checkin"
+                                class="bg-transparent border-none p-0 text-sm font-medium text-primary focus:ring-0 w-full outline-none" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-xs px-md border-l border-outline-variant">
+                        <label class="font-label-caps text-[10px] text-on-surface-variant font-bold">CHECK-OUT</label>
+                        <div class="flex items-center gap-xs text-primary font-medium">
+                            <span class="material-symbols-outlined text-md">event_busy</span>
+                            <input type="date" id="filter-checkout"
+                                class="bg-transparent border-none p-0 text-sm font-medium text-primary focus:ring-0 w-full outline-none" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-xs px-md border-l border-outline-variant">
+                        <label class="font-label-caps text-[10px] text-on-surface-variant font-bold">GUESTS</label>
+                        <div class="flex items-center gap-xs text-primary font-medium">
+                            <span class="material-symbols-outlined text-md">group</span>
+                            <select id="filter-guests"
+                                class="bg-transparent border-none p-0 text-sm font-medium text-primary focus:ring-0 appearance-none cursor-pointer outline-none">
+                                <option value="1">1 Adult</option>
+                                <option value="2" selected>2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-xs px-md border-l border-outline-variant">
+                        <label class="font-label-caps text-[10px] text-on-surface-variant font-bold">SANCTUARY
+                            TYPE</label>
+                        <select id="filter-room-type"
+                            class="bg-transparent border-none p-0 text-sm font-medium text-primary focus:ring-0 appearance-none cursor-pointer outline-none">
+                            <option value="all">All Sanctuaries</option>
+                            <option value="luxury-cottage">Luxury Cottage</option>
+                            <option value="family-suite">Family Suite</option>
+                            <option value="view-loft">Summit View Loft</option>
+                            <option value="treehouse">Treehouse</option>
+                        </select>
+                    </div>
+
+                    <button id="refine-search-btn"
+                        class="bg-primary text-on-primary w-full h-full rounded-lg font-button-text text-button-text flex items-center justify-center gap-sm hover:bg-primary-container transition-colors p-md shadow-md">
+                        <span class="material-symbols-outlined">search</span>
+                        Refine Search
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listings Bento Grid -->
+        <section class="max-w-7xl mx-auto px-lg">
+            <div class="grid grid-cols-1 gap-xl" id="listings-grid">
+
+                <!-- Room Type 1: Luxury Cottage (Horizontal) -->
+                <article
+                    class="room-card group grid grid-cols-1 lg:grid-cols-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(27,48,34,0.05)] transition-all duration-500 hover:-translate-y-1"
+                    data-type="luxury-cottage">
+                    <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="A high-end luxury cottage constructed from dark weathered wood and local Himalayan river stone."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpxFJl2oLoaO1_ALlHI7V0qiCEXCveXhuXJSTn6NjV4c0CdEz4b-F420BCkmh18trIIWAHo3Mm2Ht3t3Ji4nPhEsYF7pUEAij_cnk2gBSxH9ElKi-7Vg7tAYf7WKsSMJvWJME6dQTbqf-9Wt4TUIw20kFBCusFMhYBgZe79HaTsfY8Z9gqWE94zxE-1XcpMJAH5XCvPbNEbsBmhiszZ7MH_ltREmXrxb0pEusZjnWRrjr1FGWv6Ww9eA" />
+                        <div class="absolute top-md left-md bg-surface/90 backdrop-blur-md px-md py-xs rounded-full">
+                            <span class="font-label-caps text-[10px] text-primary">BEST SELLER</span>
+                        </div>
+                    </div>
+                    <div class="p-xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-md">
+                                <h2 class="font-headline-md text-headline-md text-primary">Luxury Heritage Cottage</h2>
+                                <div class="text-right">
+                                    <span class="block font-headline-sm text-primary">₹450</span>
+                                    <span class="font-label-caps text-[10px] text-on-surface-variant">PER NIGHT</span>
+                                </div>
+                            </div>
+                            <p class="font-body-md text-on-surface-variant mb-lg leading-relaxed">
+                                Our signature dwelling features hand-plastered walls, a private cedar-wood deck, and a
+                                wood-burning fireplace. Experience the authentic warmth of Himachali hospitality refined
+                                for the modern traveler.
+                            </p>
+                            <div class="flex flex-wrap gap-md mb-xl">
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-md">wifi</span>
+                                    <span class="text-sm">High-speed Wi-Fi</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-md">landscape</span>
+                                    <span class="text-sm">Valley View</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-md">coffee</span>
+                                    <span class="text-sm">Breakfast Incl.</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-md">fireplace</span>
+                                    <span class="text-sm">Private Hearth</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-md">
+                            <button
+                                class="booking-trigger-btn flex-1 border-1.5 border-primary text-primary px-lg py-md rounded-lg font-button-text text-button-text hover:bg-primary hover:text-on-primary transition-all">View
+                                Details</button>
+                            <button
+                                class="booking-trigger-btn flex-1 bg-secondary text-on-secondary px-lg py-md rounded-lg font-button-text text-button-text hover:opacity-90 transition-opacity">Select
+                                Sanctuary</button>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+                    <!-- Room Type 2: Family Suite -->
+                    <article
+                        class="room-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(27,48,34,0.05)] transition-all duration-500 hover:-translate-y-1"
+                        data-type="family-suite">
+                        <div class="relative h-80 overflow-hidden">
+                            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                data-alt="The interior of a spacious mountain family suite at dusk."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfdmAOAqajZIyrdsdcrkcSAC2Y6IIXe5kQ8Ba3Cfq_Kbw3Ufx_ZXyYJKjyVF2lpaf6OgaweC7bAX26XxoHE2fO5rhsljJpD6k5tWfjiJeRqnUXBa733wh5y1CfFMc4c7eEJuMiHFExwC7p4o3mUIFVLDJsise-d_GKLLF0hR2u0FnzlglVRPt4TqJ2MYYofRkbUZZ2FDwwpQ7uTyygtr5uYKI0YDum2XOnj8dbwEQ1G8iIg7wIBf1GVQ" />
+                        </div>
+                        <div class="p-lg">
+                            <div class="flex justify-between items-center mb-md">
+                                <h3 class="font-headline-sm text-headline-sm text-primary">Orchard Family Suite</h3>
+                                <span class="text-primary font-bold">₹620</span>
+                            </div>
+                            <p class="font-body-md text-on-surface-variant mb-lg h-12 overflow-hidden text-ellipsis">
+                                Two-bedroom sanctuary perfect for families, offering a large common sun-room and
+                                kitchen.
+                            </p>
+                            <div class="flex gap-md mb-lg">
+                                <span class="bg-primary/5 text-primary px-sm py-xs rounded-full text-[10px] font-bold">2
+                                    BEDROOMS</span>
+                                <span class="bg-primary/5 text-primary px-sm py-xs rounded-full text-[10px] font-bold">4
+                                    ADULTS</span>
+                            </div>
+                            <button
+                                class="booking-trigger-btn w-full border-1.5 border-primary text-primary px-lg py-md rounded-lg font-button-text text-button-text hover:bg-primary hover:text-on-primary transition-all">View
+                                Sanctuary</button>
+                        </div>
+                    </article>
+
+                    <!-- Room Type 3: Mountain View Room -->
+                    <article
+                        class="room-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(27,48,34,0.05)] transition-all duration-500 hover:-translate-y-1"
+                        data-type="view-loft">
+                        <div class="relative h-80 overflow-hidden">
+                            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                data-alt="A modern minimalist room featuring a massive panoramic window framing the mountain view."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBeC5PArt9WL6GKHxaO1a0VTkEa9GsuY2_G7mgLEUxn14zxagvvYwPT_c2Ca_t8kiId_cb1HCpHiL2TH5D06gc_yb6d1gF35oPNGA0xeuPmSy_NhSt85-Q8t6wu5qM2S6sFzaxhO-_nh7pg3Xk-y8AY879JLevMyCHu_I7bZs6zsqOVF4UisY7bOoMyrpFV67vGs3ojdLEb7To6oC5XcwPaFtpiyp2eLlPim-fUScjN1EpBquZScopig" />
+                        </div>
+                        <div class="p-lg">
+                            <div class="flex justify-between items-center mb-md">
+                                <h3 class="font-headline-sm text-headline-sm text-primary">Summit View Loft</h3>
+                                <span class="text-primary font-bold">₹380</span>
+                            </div>
+                            <p class="font-body-md text-on-surface-variant mb-lg h-12 overflow-hidden text-ellipsis">
+                                High-altitude living with panoramic views of the Dhauladhar range from your king-sized
+                                bed.
+                            </p>
+                            <div class="flex gap-md mb-lg">
+                                <span
+                                    class="bg-primary/5 text-primary px-sm py-xs rounded-full text-[10px] font-bold">BALCONY</span>
+                                <span
+                                    class="bg-primary/5 text-primary px-sm py-xs rounded-full text-[10px] font-bold">COUPLES</span>
+                            </div>
+                            <button
+                                class="booking-trigger-btn w-full border-1.5 border-primary text-primary px-lg py-md rounded-lg font-button-text text-button-text hover:bg-primary hover:text-on-primary transition-all">View
+                                Sanctuary</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Room Type 4: Treehouse (Asymmetric Highlight) -->
+                <article
+                    class="room-card group grid grid-cols-1 lg:grid-cols-12 bg-primary text-on-primary rounded-xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-1"
+                    data-type="treehouse">
+                    <div class="lg:col-span-7 relative h-[400px] overflow-hidden order-2 lg:order-1">
+                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                            data-alt="An ethereal glass and dark-timber treehouse suspended among the high branches."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcXySLa-0t5iO4g8yq16Y8SDkX5zm7g7FG2h2UhqkHaNXWMYBC5Z0hUiWCoXkytVWpG7tUsCIF6csAm_FPbmtTtrxHmwsq9Dqo1UU0mZJQbKS5ndulz-_xkNivjineBL70psMQKbDFwJyMeJGGxGJgC0m-KrPU6eVtIcTJcAcvTYEcRGP6Xn3gYjjh8o16l75knrWAj0i2n4qFqyvqKWb9rFoncMXTFk-ziozGWj9xfKrh_j7vEvubeA" />
+                    </div>
+                    <div
+                        class="lg:col-span-5 p-xl flex flex-col justify-center order-1 lg:order-2 bg-primary-container">
+                        <span class="font-label-caps text-[10px] text-on-primary-container mb-md">THE ULTIMATE
+                            ESCAPE</span>
+                        <h2 class="font-headline-md text-headline-md mb-md text-on-primary">Glass-Wing Treehouse</h2>
+                        <p class="font-body-md text-on-primary-container mb-xl leading-relaxed">
+                            Floating amongst the ancient cedars, this glass-walled sanctuary offers 360-degree immersion
+                            in the forest canopy. Stargaze from your bed and wake up with the morning birds.
+                        </p>
+                        <div class="flex items-baseline gap-sm mb-xl">
+                            <span class="text-3xl font-bold text-on-primary">₹750</span>
+                            <span class="text-xs text-on-primary-container">/ NIGHT</span>
+                        </div>
+                        <button
+                            class="booking-trigger-btn bg-secondary text-on-secondary px-xl py-lg rounded-lg font-button-text text-button-text hover:bg-secondary-container transition-colors shadow-lg active:scale-95">Inquire
+                            for Availability</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- SideNavBar Booking Engine (Desktop Only) -->
+    <!-- <aside class="hidden lg:flex fixed bottom-md right-md rounded-xl p-md bg-surface/90 backdrop-blur-2xl border border-white/20 shadow-[0px_20px_40px_rgba(27,48,34,0.05)] flex-row items-center gap-md z-50">
+        <div class="px-md border-r border-outline-variant">
+            <h4 class="font-headline-sm text-headline-sm text-primary leading-none">Booking</h4>
+            <p class="font-label-caps text-[10px] text-on-surface-variant mt-1">Himalayan Escape</p>
+        </div>
+        <div class="flex gap-xs">
+            <div class="booking-trigger-btn p-sm text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer rounded-lg flex flex-col items-center min-w-[70px]">
+                <span class="material-symbols-outlined text-md">calendar_today</span>
+                <span class="font-label-caps text-[9px] mt-1">Check-in</span>
+            </div>
+            <div class="booking-trigger-btn p-sm text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer rounded-lg flex flex-col items-center min-w-[70px]">
+                <span class="material-symbols-outlined text-md">event_busy</span>
+                <span class="font-label-caps text-[9px] mt-1">Check-out</span>
+            </div>
+            <div class="booking-trigger-btn p-sm text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer rounded-lg flex flex-col items-center min-w-[70px]">
+                <span class="material-symbols-outlined text-md">group</span>
+                <span class="font-label-caps text-[9px] mt-1">Guests</span>
+            </div>
+        </div>
+        <button class="booking-trigger-btn bg-primary text-on-primary rounded-lg px-lg py-md font-button-text text-button-text flex items-center gap-sm hover:-translate-y-1 transition-transform shadow-md">
+            <span class="material-symbols-outlined">search</span>
+            Check Availability
+        </button>
+    </aside>
+ -->
+    <!-- Footer -->
+    <footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-tertiary-container mt-3xl">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
+            <div class="space-y-md">
+                <div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">DJ's Harvest
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container">
+                    Crafting slow-living experiences in the heart of the Himalayas since 1984.
+                </p>
+            </div>
+            <div class="flex flex-col gap-sm">
+                <span class="font-label-caps text-label-caps text-primary mb-xs">Explore</span>
+                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
+                    href="stay.html">Stay</a>
+                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
+                    href="shop.html">Shop</a>
+                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
+                    href="stories.html">Stories</a>
+            </div>
+            <div class="flex flex-col gap-sm">
+                <span class="font-label-caps text-label-caps text-primary mb-xs">Journal</span>
+                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
+                    href="stories.html">Mountain Life Journal</a>
+                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
+                    href="#">Himachal Pradesh</a>
+            </div>
+            <div class="flex flex-col gap-sm">
+                <span class="font-label-caps text-label-caps text-primary mb-xs">Legal</span>
+                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
+                    href="#">Privacy Policy</a>
+                <div class="pt-md">
+                    <p class="text-[10px] text-on-surface-variant opacity-60">© 2024 DJ's Harvest Himalayan Homestays.
+                        All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth room cards entry
+            const cards = document.querySelectorAll('.room-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
+
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+
+            // Set default dates in filter inputs
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const dayAfter = new Date(today);
+            dayAfter.setDate(dayAfter.getDate() + 4);
+
+            document.getElementById('filter-checkin').value = tomorrow.toISOString().split('T')[0];
+            document.getElementById('filter-checkout').value = dayAfter.toISOString().split('T')[0];
+
+            // ==========================================
+            // ROOMS DYNAMIC FILTER
+            // ==========================================
+            const filterDropdown = document.getElementById('filter-room-type');
+
+            filterDropdown.addEventListener('change', () => {
+                const selectedType = filterDropdown.value;
+
+                cards.forEach(card => {
+                    const cardType = card.getAttribute('data-type');
+
+                    if (selectedType === 'all' || cardType === selectedType) {
+                        card.style.display = 'grid';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
+                        // Wait for transition to complete before setting display none
+                        setTimeout(() => {
+                            if (filterDropdown.value !== 'all' && cardType !== filterDropdown.value) {
+                                card.style.display = 'none';
+                            }
+                        }, 300);
+                    }
+                });
+            });
+
+            // ==========================================
+            // REFINE SEARCH ACTION
+            // ==========================================
+            const refineBtn = document.getElementById('refine-search-btn');
+            refineBtn.addEventListener('click', () => {
+                const checkin = document.getElementById('filter-checkin').value;
+                const checkout = document.getElementById('filter-checkout').value;
+                const guests = document.getElementById('filter-guests').value;
+                const type = document.getElementById('filter-room-type').value;
+
+                // Sync with booking drawer form
+                const bookCheckin = document.getElementById('book-checkin');
+                const bookCheckout = document.getElementById('book-checkout');
+                const bookGuests = document.getElementById('book-guests');
+                const bookSelect = document.getElementById('book-sanctuary-select');
+
+                if (bookCheckin) bookCheckin.value = checkin;
+                if (bookCheckout) bookCheckout.value = checkout;
+                if (bookGuests) bookGuests.value = guests;
+                if (bookSelect && type !== 'all') bookSelect.value = type;
+
+                // Trigger booking drawer opening
+                if (typeof openBookingDrawer === 'function') {
+                    openBookingDrawer();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

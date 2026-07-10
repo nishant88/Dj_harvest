@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DJ's Harvest | Himalayan Homestays</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Manrope:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass {
+            background: rgba(251, 249, 246, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .orchard-map-container {
+            mask-image: radial-gradient(circle, black 50%, transparent 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-sm">
+        <div class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
+            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
+                href="index.html">
+                <span class="font-kalam font-bold text-3xl tracking-wide text-primary bg-[#fff3] px-lg py-xs rounded-md">DJ's Harvest</span>
+            </a>
+
+            <!-- Desktop Links & Actions -->
+            <div class="hidden md:flex items-center gap-xl">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="stay.html">Stay</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="shop.html">Shop</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="stories.html">Stories</a>
+
+                <!-- Shopping Bag Icon with Cart Badge -->
+                <button
+                    class="cart-toggle-btn text-on-surface-variant hover:text-primary p-xs relative flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span
+                        class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+
+                <button
+                    class="booking-trigger-btn bg-secondary text-on-secondary px-lg py-sm rounded-lg font-button-text text-button-text hover:opacity-80 transition-opacity">Book
+                    Now</button>
+            </div>
+
+            <!-- Mobile Menu Toggle & Cart Icon -->
+            <div class="flex items-center gap-md md:hidden">
+                <button
+                    class="cart-toggle-btn text-on-surface-variant hover:text-primary p-xs relative flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span
+                        class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+                <button class="mobile-menu-trigger text-primary flex items-center">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-background"></div>
+            <div class="absolute inset-0"
+                data-alt="An ultra-high-definition, cinematic view of a lush Himalayan DJ's Harvest at dawn."
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAml874EUX1kwmNi2D6Dq73OgGaCQdMjnYP5MjblEdqEw3H52Xf9riMneHR9SQJ0w1cY6k4-O23uxiM-ZIqS5vXWS_8cXhVbplWmZtNm1zaDLzttgco-E4_pCCuQbtVw2ps4lkQGyo-yDkNhEyQG-RuxnB55ulRAbbK3IE33AB-xQ3xdUey8bqNFacUgWJHguiEDstX6eM7wntouGVjMRP6BvXudM6DHlfER0ZQLU5jhSsZ799oEqAYhg'); background-size: cover; background-position: center;">
+            </div>
+        </div>
+        <div class="relative z-10 text-center px-lg max-w-4xl">
+            <span
+                class="font-label-caps text-label-caps text-white mb-md block tracking-[0.3em] uppercase opacity-90">Heritage
+                &amp; Harvest</span>
+            <h1
+                class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-lg text-shadow-sm">
+                Experience the Soul of Himalayan DJ's Harvest</h1>
+            <p class="font-body-lg text-body-lg text-white/90 mb-2xl max-w-2xl mx-auto">Stay. Explore. Taste. Reconnect
+                with the rhythm of the mountains in our boutique organic estates.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-lg">
+                <button
+                    class="booking-trigger-btn w-full md:w-auto bg-secondary text-on-secondary px-2xl py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest shadow-xl transition-all hover:scale-105">Book
+                    Your Stay</button>
+                <a href="#orchard-map"
+                    class="w-full md:w-auto text-center glass text-primary px-2xl py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest transition-all hover:bg-white/40 flex items-center justify-center">Explore
+                    Orchard</a>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div
+            class="absolute bottom-lg left-1/2 -translate-x-1/2 flex flex-col items-center gap-sm animate-bounce text-white/60">
+            <span class="font-label-caps text-[10px]">Discover</span>
+            <span class="material-symbols-outlined">expand_more</span>
+        </div>
+    </header>
+
+    <!-- Interactive Orchard Map Section -->
+    <section id="orchard-map" class="py-3xl bg-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-lg grid grid-cols-1 lg:grid-cols-12 gap-2xl items-center">
+            <div class="lg:col-span-5">
+                <h2 class="font-headline-md text-headline-md text-primary mb-lg">The Living Map of Our Orchards</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-xl">Explore the diverse topography of our
+                    estates. Each terrace is home to a unique heritage variety, cultivated using centuries-old natural
+                    methods across 50 acres of pristine mountain slope.</p>
+
+                <!-- Zone Cards Container -->
+                <div class="space-y-lg" id="zone-cards-list">
+                    <!-- Zone 1 -->
+                    <div id="zone-card-1"
+                        class="map-zone-card group cursor-pointer p-lg glass rounded-xl border-l-4 border-secondary transition-all hover:translate-x-2"
+                        data-zone="royal-delicious">
+                        <h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Royal Delicious Zone</h4>
+                        <p class="text-sm text-on-surface-variant mb-md">Peak Harvest: October. Known for deep crimson
+                            skin and intense honey sweetness.</p>
+                        <div class="flex items-center gap-sm">
+                            <span
+                                class="px-md py-xs bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-tighter">Harvest
+                                in Progress</span>
+                            <span
+                                class="px-md py-xs bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tighter">Limited
+                                Stock</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 2 -->
+                    <div id="zone-card-2"
+                        class="map-zone-card group cursor-pointer p-lg hover:bg-surface-container-low rounded-xl border-l-4 border-transparent transition-all"
+                        data-zone="golden-spur">
+                        <h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Golden Spur Terrace</h4>
+                        <p class="text-sm text-on-surface-variant mb-md">Crisp, citrusy notes. Thrives at 7,500ft in the
+                            cooler northern winds.</p>
+                        <div class="flex items-center gap-sm">
+                            <span
+                                class="px-md py-xs bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-tighter">Growing
+                                Stage</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 3 -->
+                    <div id="zone-card-3"
+                        class="map-zone-card group cursor-pointer p-lg hover:bg-surface-container-low rounded-xl border-l-4 border-transparent transition-all"
+                        data-zone="heritage-russet">
+                        <h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Heritage Russet Ridge</h4>
+                        <p class="text-sm text-on-surface-variant mb-md">Ancient 100-year-old trees. Earthy, dense, and
+                            complex flavors.</p>
+                        <div class="flex items-center gap-sm">
+                            <span
+                                class="px-md py-xs bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-tighter">Wild
+                                Harvest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Image & Pulse Indicators -->
+            <div class="lg:col-span-7 relative h-[600px] orchard-map-container rounded-3xl overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-primary/5"></div>
+                <div class="absolute inset-0" data-alt="A stylized, artistic aerial map of a mountain orchard estate."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuvow5InKwQPVGMJ9HV6zVxYUViXaTxlR9xXy0vVFMe4-nDV77th-T8rFnf5810MWWsnv_ogul5nrWZPjf7jFvab1TroHvtBVZB9aYF5BjRfabQsrEwjpeUcOman5PS_qfj85rkURmSi8N1IGmldPymKYsZRTepN-PCXr_IqMNFb4ogT-foz8NfvaKJ4MHj8waKfUJiiKz-Vgu04-_i6OyEkKa8pwhfAg_i1ZNkHgTt-9NZp3TPzb-nA'); background-size: cover; background-position: center;">
+                </div>
+
+                <!-- Main Homestay Lodge Marker -->
+                <div class="absolute top-[30%] left-[40%] group pointer-events-auto cursor-pointer" id="marker-lodge">
+                    <div class="w-4 h-4 bg-secondary rounded-full animate-ping absolute inset-0"></div>
+                    <div class="w-4 h-4 bg-secondary rounded-full relative z-10"></div>
+                    <div
+                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-md glass px-md py-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+                        <span class="font-label-caps text-[10px] text-primary">Main Homestay Lodge</span>
+                    </div>
+                </div>
+
+                <!-- Bonfire Glade Marker -->
+                <div class="absolute bottom-[20%] right-[30%] group pointer-events-auto cursor-pointer"
+                    id="marker-bonfire">
+                    <div class="w-4 h-4 bg-primary rounded-full animate-pulse absolute inset-0"></div>
+                    <div class="w-4 h-4 bg-primary rounded-full relative z-10"></div>
+                    <div
+                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-md glass px-md py-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+                        <span class="font-label-caps text-[10px] text-primary">Bonfire Glade</span>
+                    </div>
+                </div>
+
+                <!-- Custom Orchard Zones Map Markers -->
+                <div class="absolute top-[20%] right-[25%] group pointer-events-auto cursor-pointer"
+                    id="marker-royal-delicious">
+                    <div
+                        class="w-5 h-5 bg-secondary rounded-full relative z-10 border-2 border-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-125">
+                        <span class="w-2 h-2 bg-white rounded-full"></span>
+                    </div>
+                    <div
+                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-md glass px-md py-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+                        <span class="font-label-caps text-[10px] text-primary">Royal Delicious Zone</span>
+                    </div>
+                </div>
+
+                <div class="absolute top-[50%] left-[20%] group pointer-events-auto cursor-pointer"
+                    id="marker-golden-spur">
+                    <div
+                        class="w-5 h-5 bg-primary rounded-full relative z-10 border-2 border-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-125">
+                        <span class="w-2 h-2 bg-white rounded-full"></span>
+                    </div>
+                    <div
+                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-md glass px-md py-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+                        <span class="font-label-caps text-[10px] text-primary">Golden Spur Terrace</span>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-[40%] left-[55%] group pointer-events-auto cursor-pointer"
+                    id="marker-heritage-russet">
+                    <div
+                        class="w-5 h-5 bg-primary rounded-full relative z-10 border-2 border-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-125">
+                        <span class="w-2 h-2 bg-white rounded-full"></span>
+                    </div>
+                    <div
+                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-md glass px-md py-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+                        <span class="font-label-caps text-[10px] text-primary">Heritage Russet Ridge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Bento Grid) -->
+    <section class="py-3xl px-lg max-w-7xl mx-auto">
+        <div class="text-center mb-2xl">
+            <span class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.2em] uppercase">The
+                Himalayan Way</span>
+            <h2 class="font-headline-md text-headline-md text-primary mt-sm">Crafted Experiences</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg h-auto md:h-[800px]">
+            <!-- Large Card -->
+            <div class="md:col-span-2 relative group overflow-hidden rounded-xl shadow-lg">
+                <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                    data-alt="A first-person perspective image of hands picking a perfectly ripe, red apple from a frost-kissed branch."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp-lc-PnVyyKqAA5XpOV7dEPBIOoF0FtxNLRamKr0-T00KNl5G0hCyG_mvec86cIOw10tnRtM7vGD2zE9Qo4IGMQhrzIj0CPNCHhs7oAR15v422WlGyzy-dzy6QgEN_HmgtUZV74JyYpXX609kMpviHjesIV3VzgNcupVQF0wwfrSEZVuKmWmHJode4_emuWV2ELfj1uUcR60-podTnDTXwQy4n9Q6lO0Df7byDcIA2Q0EyDCbr5aN-A'); background-size: cover; background-position: center;">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-2xl">
+                    <span class="font-label-caps text-[10px] text-white/80 uppercase tracking-widest">Autumn
+                        Exclusive</span>
+                    <h3 class="font-headline-md text-headline-md text-white mt-xs">Apple Picking Harvest</h3>
+                    <p class="text-white/80 max-w-md mt-md">Join our family during the harvest moon. Learn the art of
+                        selective picking and taste the juice of an apple that hasn't touched the ground.</p>
+                    <a href="stay.html"
+                        class="mt-lg text-white font-label-caps inline-flex items-center gap-sm hover:translate-x-2 transition-transform">
+                        Learn More <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Small Vertical Card -->
+            <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                    data-alt="A cozy scene of a crackling bonfire under a star-studded mountain sky."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0yEUx9SuWdZmTIhLPEHNz4mAmH81Uwppv1e75SmQF3x7ismr92x8eOb6mg8F_z-ZggpbXvXzJnx6J18vE1XwMBPaVbiru9UkHA4O0rA-LmGldsnWQ4_P9UcRo4kxMEwex_rkei--poTBfBLA8aYpuuFVTbsPvsl4RWDvn5LhdIw2SUk8rf43k_eQyzatNJo-7-e-8Vixbsqv4-KAbtL_p2K_pj3KJXYzX3GCxGV5MNtjPlUIQ2G2LxA'); background-size: cover; background-position: center;">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-xl">
+                    <h3 class="font-headline-sm text-headline-sm text-white">Bonfire Nights</h3>
+                    <a href="stay.html"
+                        class="mt-md text-white/80 font-label-caps inline-flex items-center gap-sm hover:translate-x-2 transition-transform">
+                        Details <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Horizontal Small Card -->
+            <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                    data-alt="A narrow, winding path through a traditional Himalayan stone-and-wood village."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhFlBH03V7BSv6klm-qEg6Gt8LA3Ov_FyTgzWwJnS6EJGaZ0oM83bUzBKzmUBxq30vfaqf-2W_vEYYnrMudBCauEhqAfI2UmzGzUw3GTWjTqdXDa0PcDmg4OMj1BPpmEk6yUS2PuR7ziQNQzIV4CUe4P3UNtb3LB5MeJoCDEg0jIwJd57_wFm3NiMUtwEFUG_tQHnezUcSPZT-nTMUWI4IfiH7gJSX2RF_tQC5dys_uYPHqO8HqSPyyA'); background-size: cover; background-position: center;">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-xl">
+                    <h3 class="font-headline-sm text-headline-sm text-white">Village Walks</h3>
+                    <a href="stories.html"
+                        class="mt-md text-white/80 font-label-caps inline-flex items-center gap-sm hover:translate-x-2 transition-transform">
+                        Explore <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Another Large Card-ish -->
+            <div class="md:col-span-2 relative group overflow-hidden rounded-xl shadow-lg">
+                <div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                    data-alt="A high-end, editorial flat-lay of organic apple-based products."
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDw_ei2YERmGBY_7knwA8aTu0xHnv_zcai4W5XfI3XYgsFPW7dgXrW6wb5pVbMvUjzz-kTZF_M0yOAMrEzZls8A28Pq1SNzmbHP64xESSyiTMGVLovYoC2isY0wEqT80zN3_ZGgzhJKtmUtZeyQhZ3sNzYfAQXI8Z3gbtJEIIrwSWatZ1T2URhqoT8EZLCpEGJwuMUwa0q1WgXfeuWlBOS1Mh5Lxy8od67yJVfdN0Lv0VqA4jCW6wh0-A'); background-size: cover; background-position: center;">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-2xl">
+                    <h3 class="font-headline-md text-headline-md text-white">The Orchard Kitchen</h3>
+                    <p class="text-white/80 max-w-md mt-md">Farm-to-table dining featuring ingredients grown on our
+                        terraces. Traditional recipes with a modern touch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof & Testimonials -->
+    <section class="py-3xl bg-surface-container-low overflow-hidden">
+        <div class="max-w-7xl mx-auto px-lg">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-2xl">
+                <div>
+                    <span
+                        class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.2em] uppercase">Guest
+                        Stories</span>
+                    <h2 class="font-headline-md text-headline-md text-primary mt-sm">A Quiet Awakening</h2>
+                </div>
+                <div class="hidden md:flex gap-md">
+                    <button id="prev-testimonial"
+                        class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button id="next-testimonial"
+                        class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Testimonial Slider Panel -->
+            <div class="relative mb-3xl">
+                <div id="testimonial-slide-box"
+                    class="glass p-2xl rounded-2xl max-w-3xl border border-white/50 relative z-10 transition-opacity duration-300">
+                    <span class="material-symbols-outlined text-secondary text-5xl mb-lg"
+                        style="font-variation-settings: 'FILL' 1;">format_quote</span>
+
+                    <p id="testimonial-quote"
+                        class="font-headline-sm text-headline-sm text-primary italic mb-xl min-h-[120px]">
+                        "Waking up to the smell of ripened apples and the sight of the snow-capped Dhauladhar range was
+                        a spiritual experience. The stillness here is something you can't find anywhere else."
+                    </p>
+
+                    <div class="flex items-center gap-md">
+                        <div id="testimonial-avatar" class="w-12 h-12 rounded-full bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2cQn8-D5vk9fDTTaEZMjgcZnZklAodI6zs6BK4q3zBeiP8NyCaLT7P3lxuCS5QWjGx1vUXtTmTwQWEJSn66t0Y3N2u3M1HBQceQGJxcTp9KrfZ5T0vNebzf0G66mpNxMbOolGmSJzdwFG_m9QyYF53fWyt_f6jwJLp790fkTTLg6N-Sth49Im0i4SMl-hnsdxubscQU_lWKdzIQ8icDUfJfW2cIfCv5dbNQq3UpVrJ35a5ue-9fHjGg')">
+                        </div>
+                        <div>
+                            <p id="testimonial-name" class="font-bold text-primary">Eleanor Vance</p>
+                            <p id="testimonial-title" class="text-xs text-on-surface-variant font-label-caps uppercase">
+                                Design Architect, London</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-0"></div>
+            </div>
+
+            <!-- Instagram Grid -->
+            <div class="mt-2xl">
+                <div class="flex items-center justify-between mb-lg">
+                    <h3 class="font-label-caps text-label-caps text-primary tracking-widest uppercase">
+                        @AppleOrchardsHomestay</h3>
+                    <a class="text-secondary text-xs font-bold underline underline-offset-4" href="stories.html">Follow
+                        our journal</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-sm">
+                    <div class="aspect-square relative group overflow-hidden cursor-pointer rounded-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB28rkpy2rL5wWHdzkmhHAUK1Nxd3XqnOcF7vI4hG2_qWDRMyLXUhZLek3Acjimub2nxuuiGA0vXFhSFRMpiaLi-3Z2jVDQcAWXblYWWJapi6MaxFBnyXW8Dz362fk-SScGE_ybk79t-MmR4OwMjTn6hYla6-il3qQ4W_XmRSySUqhK7dgOCDln5_Ghb1sH1hnQ5vg5fOo1SltfCDlTlthbxDSpxHU6BPQuOH9zeAx-bLPC6GYc-Lvr_g');">
+                        </div>
+                    </div>
+                    <div class="aspect-square relative group overflow-hidden cursor-pointer rounded-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfBjR-WnnPPTSm3Grgihc93hkIiKnRXV3iReqtXQqNLaK8Wd6hKV3FoTRhsJPa2PH-5DAzSYgCuhj6hzD3OVhNFE-QyzkY7pfc2PFMBAZUbSfvj92OruiMBc5efuoE9YjjapYaun-dRhBp2jkr0moepMabGiHekxIcVX-bSzsmoAqfxBco4ZVCTtwI4Nwj3OavinCLE13Nf4G_KgfNvQefM5e3noNKsgV63nd3aOlMS0tyQvJuFlNx0w');">
+                        </div>
+                    </div>
+                    <div class="aspect-square relative group overflow-hidden cursor-pointer rounded-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsnknPXqu8mP4F5mwCmKtbSDDSz6gTniVEmsLeLY_Fq3nyXrUAwz5W5DguonkC9TvePhFUnxl8FWyqFQj4TuqjvHMS2W_tsKLM0jk2mpQ4Rn5LS_CMtwxGTBOFG2HAP8pYNz94-vqdyeHMVU7X_noGyUbthnK5bO6uM1UHWxeIv08v-5p5vdsK_Ft4IUh2mw7xmmPoATmqCc-4xA9lwmGTjXQ6M6_KJrQkM1AUq1wWtK2gXZT-7VdtXg');">
+                        </div>
+                    </div>
+                    <div class="aspect-square relative group overflow-hidden cursor-pointer rounded-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDv7-yJ-KCSF_lPU3obPM_wb4Go68sJ-k_V__e9WdHTvjVJpOsS9P-9YMtWJ2qHtuoZcCdUevt-hQdik6eSWo6uil8S1x7LkLaFTQ6oruR7-hE8wigmhNykmeT1B_Xxo-qg5EtKVzT98QbS3kdfv8l8Bl_RoObOk76Sq7LSBgKsJJbcGP6g3caT4hjJ7nvUILJp7aogNogxgW6iEx625mqRKuVk5oufEewa-XSgO3x6-WVX1LoVv9yFjA');">
+                        </div>
+                    </div>
+                    <div class="aspect-square relative group overflow-hidden cursor-pointer rounded-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBE-AIw0dVNqFkAM9AhxuLURJDoxthJuqIlhdMBLWl2bzMWE-__hy2cU_g3GW0TU8zCU0WE1Wf3PqQrdGMbENKx5dDpM0xhX7X8lF2xhEOPr6z9dSp5hfiP5e-E2vWjdhIcuKkNGHspEAjeVP6-qdsN-WwmBcBV92iIagsk5VlPw7fFB62d0D1HYLwlSEXXTDKXvi-Pq3e3CAAChcsoQd-5qv4Z5Sg_bjChSs-j1LcOTKPmDg0KdT6RhA');">
+                        </div>
+                    </div>
+                    <div class="aspect-square relative group overflow-hidden cursor-pointer rounded-lg">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZEfD0LN61UJc4LvSJmgUNwEtcc1DNO1Jgp9yX2nLaqSUMPWi6ZKjh04fw6shz8bQJbOMP0ZK0FFCX27X0UYR4CQ9CkRpu_cXQio27G3aCAzdCZZKluyKmxsmMFhZjlPF6hG3bus8zb80kJPrkUwx9YEm1qltnu8SA000F_uljhDyt0kZ3NVdLlD8sKjebjeoerzarBkH0a5jl3NQRo5bqWDT5wg0uL1bLBiTYR0JXZ7C6GeycG3MiOA');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-tertiary-container">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
+            <div class="md:col-span-1">
+                <a class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim"
+                    href="index.html">DJ's Harvest</a>
+                <p class="mt-md font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container">
+                    Sustainably managing Himalayan heritage estates since 1924. Experience the stillness.</p>
+            </div>
+            <div>
+                <h4
+                    class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim mb-lg uppercase tracking-widest">
+                    Stay</h4>
+                <ul class="space-y-sm">
+                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                            href="stay.html">Our Cottages</a></li>
+                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                            href="stay.html">Group Retreats</a></li>
+                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                            href="stay.html">Work-from-Orchard</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4
+                    class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim mb-lg uppercase tracking-widest">
+                    Discover</h4>
+                <ul class="space-y-sm">
+                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                            href="shop.html">Orchard Shop</a></li>
+                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                            href="stories.html">Stories</a></li>
+                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
+                            href="stories.html">Mountain Life Journal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4
+                    class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim mb-lg uppercase tracking-widest">
+                    Connect</h4>
+                <p class="text-sm text-on-surface-variant dark:text-on-tertiary-container mb-md">Kotgarh, Himachal
+                    Pradesh, India</p>
+                <div class="flex gap-md">
+                    <a class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-secondary transition-colors text-primary"
+                        href="#">
+                        <span class="material-symbols-outlined">public</span>
+                    </a>
+                    <a class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-secondary transition-colors text-primary"
+                        href="mailto:harvest@appleorchards.com">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-lg py-lg border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-md">
+            <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">© 2024 DJ's Harvest Himalayan
+                Homestays. All rights reserved.</p>
+            <div class="flex gap-lg">
+                <a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Privacy Policy</a>
+                <a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar scroll effect
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('py-sm', 'shadow-md');
+                    nav.classList.remove('py-md', 'shadow-sm');
+                } else {
+                    nav.classList.add('py-md', 'shadow-sm');
+                    nav.classList.remove('py-sm', 'shadow-md');
+                }
+            });
+
+            // Smooth parallax for hero content
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                const heroText = document.querySelector('header .relative.z-10');
+                if (heroText) {
+                    heroText.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroText.style.opacity = 1 - (scrolled / 700);
+                }
+            });
+
+            // ==========================================
+            // HOMEPAGE SPECIFIC INTERACTIVE MAP SYSTEM
+            // ==========================================
+            const zoneCards = document.querySelectorAll('.map-zone-card');
+            const mapMarkers = {
+                'royal-delicious': document.getElementById('marker-royal-delicious'),
+                'golden-spur': document.getElementById('marker-golden-spur'),
+                'heritage-russet': document.getElementById('marker-heritage-russet')
+            };
+
+            function activateZone(zoneName) {
+                // Deactivate all cards
+                zoneCards.forEach(card => {
+                    card.className = "map-zone-card group cursor-pointer p-lg hover:bg-surface-container-low rounded-xl border-l-4 border-transparent transition-all";
+                });
+                // Activate selected card
+                const activeCard = document.querySelector(`[data-zone="${zoneName}"]`);
+                if (activeCard) {
+                    activeCard.className = "map-zone-card group cursor-pointer p-lg glass rounded-xl border-l-4 border-secondary transition-all hover:translate-x-2";
+                }
+
+                // Make all markers small
+                Object.values(mapMarkers).forEach(marker => {
+                    if (marker) {
+                        const icon = marker.querySelector('div');
+                        icon.className = "w-5 h-5 bg-primary rounded-full relative z-10 border-2 border-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-125";
+                    }
+                });
+                // Pulse and grow active marker
+                const activeMarker = mapMarkers[zoneName];
+                if (activeMarker) {
+                    const icon = activeMarker.querySelector('div');
+                    icon.className = "w-6 h-6 bg-secondary rounded-full relative z-10 border-2 border-white flex items-center justify-center shadow-xl scale-125 animate-pulse transition-transform duration-300";
+                }
+            }
+
+            // Bind card clicks
+            zoneCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const zone = card.getAttribute('data-zone');
+                    activateZone(zone);
+                });
+            });
+
+            // Bind marker clicks
+            Object.entries(mapMarkers).forEach(([zoneName, markerEl]) => {
+                if (markerEl) {
+                    markerEl.addEventListener('click', () => {
+                        activateZone(zoneName);
+                        // Scroll card into view on mobile
+                        const card = document.querySelector(`[data-zone="${zoneName}"]`);
+                        if (card) {
+                            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    });
+                }
+            });
+
+            // ==========================================
+            // TESTIMONIAL SLIDER INTERACTIVITY
+            // ==========================================
+            const testimonials = [
+                {
+                    quote: `"Waking up to the smell of ripened apples and the sight of the snow-capped Dhauladhar range was a spiritual experience. The stillness here is something you can't find anywhere else."`,
+                    name: "Eleanor Vance",
+                    title: "Design Architect, London",
+                    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2cQn8-D5vk9fDTTaEZMjgcZnZklAodI6zs6BK4q3zBeiP8NyCaLT7P3lxuCS5QWjGx1vUXtTmTwQWEJSn66t0Y3N2u3M1HBQceQGJxcTp9KrfZ5T0vNebzf0G66mpNxMbOolGmSJzdwFG_m9QyYF53fWyt_f6jwJLp790fkTTLg6N-Sth49Im0i4SMl-hnsdxubscQU_lWKdzIQ8icDUfJfW2cIfCv5dbNQq3UpVrJ35a5ue-9fHjGg"
+                },
+                {
+                    quote: `"The tranquility and pure air of the Himalayan orchards revived my creativity. A perfect blend of organic farming and modern comfort in the peaks."`,
+                    name: "Marcus Aurelius",
+                    title: "Creative Writer, Rome",
+                    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2cQn8-D5vk9fDTTaEZMjgcZnZklAodI6zs6BK4q3zBeiP8NyCaLT7P3lxuCS5QWjGx1vUXtTmTwQWEJSn66t0Y3N2u3M1HBQceQGJxcTp9KrfZ5T0vNebzf0G66mpNxMbOolGmSJzdwFG_m9QyYF53fWyt_f6jwJLp790fkTTLg6N-Sth49Im0i4SMl-hnsdxubscQU_lWKdzIQ8icDUfJfW2cIfCv5dbNQq3UpVrJ35a5ue-9fHjGg"
+                },
+                {
+                    quote: `"The glass-wing treehouse was pure magic. Waking up in the forest canopy, surrounded by mountain mist and birdsong—I'll never forget this sanctuary."`,
+                    name: "Sophia Chen",
+                    title: "Travel Journalist, Singapore",
+                    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2cQn8-D5vk9fDTTaEZMjgcZnZklAodI6zs6BK4q3zBeiP8NyCaLT7P3lxuCS5QWjGx1vUXtTmTwQWEJSn66t0Y3N2u3M1HBQceQGJxcTp9KrfZ5T0vNebzf0G66mpNxMbOolGmSJzdwFG_m9QyYF53fWyt_f6jwJLp790fkTTLg6N-Sth49Im0i4SMl-hnsdxubscQU_lWKdzIQ8icDUfJfW2cIfCv5dbNQq3UpVrJ35a5ue-9fHjGg"
+                }
+            ];
+
+            let activeIndex = 0;
+            const quoteEl = document.getElementById('testimonial-quote');
+            const nameEl = document.getElementById('testimonial-name');
+            const titleEl = document.getElementById('testimonial-title');
+            const avatarEl = document.getElementById('testimonial-avatar');
+            const boxEl = document.getElementById('testimonial-slide-box');
+
+            function showTestimonial(index) {
+                // Fade out
+                boxEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    const t = testimonials[index];
+                    quoteEl.textContent = t.quote;
+                    nameEl.textContent = t.name;
+                    titleEl.textContent = t.title;
+                    avatarEl.style.backgroundImage = `url('${t.avatar}')`;
+
+                    // Fade in
+                    boxEl.style.opacity = '1';
+                }, 300);
+            }
+
+            document.getElementById('prev-testimonial').addEventListener('click', () => {
+                activeIndex = (activeIndex - 1 + testimonials.length) % testimonials.length;
+                showTestimonial(activeIndex);
+            });
+
+            document.getElementById('next-testimonial').addEventListener('click', () => {
+                activeIndex = (activeIndex + 1) % testimonials.length;
+                showTestimonial(activeIndex);
+            });
+        });
+    </script>
+</body>
+
+</html>

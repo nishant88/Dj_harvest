@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Secure Checkout | DJ's Harvest Himalayan Homestays</title>
+    
+    <!-- Scripts & Stylesheets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-inactive { opacity: 0.4; pointer-events: none; }
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        .success-checkmark .check-icon {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            border-radius: 50%;
+            box-sizing: content-box;
+            border: 4px solid #4caf50;
+        }
+        .success-checkmark .check-icon::after {
+            top: 4px;
+            left: 14px;
+            width: 30px;
+            height: 40px;
+            border-right: 4px solid #4caf50;
+            border-bottom: 4px solid #4caf50;
+            transform: rotate(45deg);
+            content: '';
+            position: absolute;
+            transform-origin: 100% 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col">
+    <!-- Clean Header -->
+    <header class="w-full bg-white border-b border-outline-variant py-md px-lg">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
+                <span class="font-kalam font-bold text-3xl tracking-wide text-primary bg-[#fff3] px-lg py-xs rounded-md">DJ's Harvest</span>
+            </a>
+            <div class="flex items-center gap-xs text-xs font-label-caps uppercase text-on-surface-variant tracking-wider font-bold">
+                <span class="material-symbols-outlined text-sm">lock</span>
+                <span>Secure Gateway</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-6xl w-full mx-auto p-lg flex flex-col md:grid md:grid-cols-12 gap-xl">
+        
+        <!-- Left Side: Stepper & Forms (7 Columns) -->
+        <div class="md:col-span-7 flex flex-col gap-lg order-2 md:order-1">
+            
+            <!-- Progress Stepper Tracker -->
+            <div class="flex items-center justify-between border border-outline-variant bg-white p-md rounded-xl">
+                <div id="step-tab-1" class="flex items-center gap-sm font-label-caps text-xs font-bold text-primary">
+                    <span class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</span>
+                    <span>Shipping</span>
+                </div>
+                <div class="flex-1 border-t border-outline-variant mx-md"></div>
+                <div id="step-tab-2" class="flex items-center gap-sm font-label-caps text-xs font-bold text-on-surface-variant opacity-50">
+                    <span class="w-6 h-6 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold">2</span>
+                    <span>Payment</span>
+                </div>
+                <div class="flex-1 border-t border-outline-variant mx-md"></div>
+                <div id="step-tab-3" class="flex items-center gap-sm font-label-caps text-xs font-bold text-on-surface-variant opacity-50">
+                    <span class="w-6 h-6 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold">3</span>
+                    <span>Receipt</span>
+                </div>
+            </div>
+
+            <!-- STEP 1 FORM: Customer & Shipping Details -->
+            <div id="form-step-1" class="bg-white border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+                <h2 class="font-headline-sm text-headline-sm text-primary mb-sm">Shipping & Contact Details</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                    <div class="flex flex-col gap-xs">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Full Name</label>
+                        <input type="text" id="cust-name" required class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="John Doe" />
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Email Address</label>
+                        <input type="email" id="cust-email" required class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="johndoe@example.com" />
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-xs">
+                    <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Street Address</label>
+                    <input type="text" id="cust-address" required class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="123 Mountain View Trail" />
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+                    <div class="flex flex-col gap-xs col-span-2 md:col-span-1">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">City</label>
+                        <input type="text" id="cust-city" required class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="Shimla" />
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">ZIP / Postal Code</label>
+                        <input type="text" id="cust-zip" required class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="171001" />
+                    </div>
+                    <div class="flex flex-col gap-xs col-span-2 md:col-span-1">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Phone Number</label>
+                        <input type="tel" id="cust-phone" required class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="+91 98765 43210" />
+                    </div>
+                </div>
+
+                <button id="btn-proceed-to-pay" class="w-full bg-primary text-on-primary py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest hover:bg-primary-container transition-colors shadow-lg mt-md flex items-center justify-center gap-sm">
+                    <span>Proceed to Payment</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- STEP 2 FORM: Secure Credit Card Gateway (Hidden Initially) -->
+            <div id="form-step-2" class="bg-white border border-outline-variant rounded-xl p-lg hidden flex flex-col gap-md">
+                
+                <!-- Dynamic 3D Credit Card Visualizer -->
+                <div class="card-perspective w-full max-w-sm mx-auto mb-lg h-48">
+                    <div id="credit-card-3d" class="credit-card-inner relative w-full h-full rounded-2xl shadow-xl">
+                        
+                        <!-- FRONT FACE -->
+                        <div class="card-face absolute inset-0 w-full h-full rounded-2xl p-lg flex flex-col justify-between text-white bg-gradient-to-tr from-primary to-primary-container border border-white/10">
+                            <div class="flex justify-between items-start">
+                                <span class="material-symbols-outlined text-4xl opacity-80">contactless</span>
+                                <span id="card-type-logo" class="font-label-caps tracking-widest text-lg font-bold">CARD</span>
+                            </div>
+                            <div class="flex flex-col gap-sm">
+                                <div id="card-num-preview" class="text-xl font-mono tracking-widest opacity-90 text-center py-sm">•••• •••• •••• ••••</div>
+                                <div class="flex justify-between items-end">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="text-[8px] uppercase tracking-wider opacity-60">Card Holder</span>
+                                        <div id="card-holder-preview" class="text-xs font-label-caps uppercase truncate max-w-[180px]">Your Name</div>
+                                    </div>
+                                    <div class="flex flex-col gap-0.5 items-end">
+                                        <span class="text-[8px] uppercase tracking-wider opacity-60">Expires</span>
+                                        <div id="card-expiry-preview" class="text-xs font-mono">MM/YY</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- BACK FACE -->
+                        <div class="card-face card-face-back absolute inset-0 w-full h-full rounded-2xl py-lg flex flex-col justify-between text-white bg-gradient-to-tr from-[#111] to-[#222] border border-white/10">
+                            <div class="w-full bg-black h-10 mt-md"></div>
+                            <div class="px-lg flex flex-col gap-sm">
+                                <div class="flex justify-end items-center gap-sm">
+                                    <span class="text-[8px] uppercase tracking-wider opacity-60">CVV Code</span>
+                                    <div id="card-cvv-preview" class="bg-white text-black font-mono px-md py-xs rounded text-xs text-right tracking-widest font-bold w-12">•••</div>
+                                </div>
+                                <p class="text-[8px] opacity-40 text-center">Authorized signature required. Himalayan Homestays Processing Gateway.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <h2 class="font-headline-sm text-headline-sm text-primary mb-sm">Secure Payment</h2>
+                
+                <div class="flex flex-col gap-xs">
+                    <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Cardholder Name</label>
+                    <input type="text" id="card-holder-input" class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="John Doe" />
+                </div>
+
+                <div class="flex flex-col gap-xs">
+                    <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Card Number</label>
+                    <div class="relative">
+                        <input type="text" id="card-number-input" maxlength="19" class="bg-white border border-outline-variant rounded-lg p-md pr-12 text-primary w-full focus:ring-1 focus:ring-primary focus:border-primary outline-none font-mono" placeholder="4000 1234 5678 9010" />
+                        <span id="input-card-icon" class="absolute right-md top-1/2 transform -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-xl">credit_card</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-md">
+                    <div class="flex flex-col gap-xs">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Expiry Date</label>
+                        <input type="text" id="card-expiry-input" maxlength="5" class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none font-mono" placeholder="MM/YY" />
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <label class="text-[10px] font-label-caps uppercase tracking-wider text-on-surface-variant font-bold">Security Code (CVV)</label>
+                        <input type="password" id="card-cvv-input" maxlength="4" class="bg-white border border-outline-variant rounded-lg p-md text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none font-mono" placeholder="123" />
+                    </div>
+                </div>
+
+                <div class="flex gap-md mt-md">
+                    <button id="btn-back-to-step1" class="w-1/3 border border-outline-variant text-primary py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest hover:bg-surface-container transition-colors flex items-center justify-center gap-sm">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                        <span>Back</span>
+                    </button>
+                    <button id="btn-pay-now" class="w-2/3 bg-secondary text-on-secondary py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest hover:opacity-90 transition-opacity shadow-lg flex items-center justify-center gap-sm">
+                        <span>Pay</span>
+                        <span id="btn-pay-total">₹0.00</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3 LOADING / CONFIRMATION DISPLAY (Hidden Initially) -->
+            <div id="form-step-3" class="bg-white border border-outline-variant rounded-xl p-lg hidden text-center flex flex-col items-center justify-center gap-lg min-h-[400px]">
+                
+                <!-- Loading State -->
+                <div id="payment-loader" class="flex flex-col items-center gap-md">
+                    <svg class="animate-spin h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <h3 class="font-headline-sm text-headline-sm text-primary">Securing Your Transaction...</h3>
+                    <p class="text-on-surface-variant max-w-xs text-sm">Simulating secure connection with payment network. Please do not close or reload this page.</p>
+                </div>
+
+                <!-- Success State -->
+                <div id="payment-success" class="hidden flex flex-col items-center gap-md w-full">
+                    <div class="success-checkmark my-md">
+                        <div class="check-icon"></div>
+                    </div>
+                    
+                    <h3 class="font-headline-md text-headline-md text-primary">Harvest Order Confirmed!</h3>
+                    <p class="text-on-surface-variant max-w-sm text-sm">Thank you for booking with DJ's Harvest. A copy of your detailed receipt has been sent to your email.</p>
+                    
+                    <!-- Invoice Receipt Details Box -->
+                    <div class="w-full bg-surface-container rounded-xl p-lg text-left mt-md flex flex-col gap-sm text-sm border border-outline-variant max-w-md mx-auto">
+                        <div class="flex justify-between font-bold border-b border-outline-variant pb-xs">
+                            <span class="text-primary font-label-caps uppercase text-xs">Receipt Summary</span>
+                            <span id="receipt-id" class="text-on-surface-variant font-mono font-normal">#ORD-329810</span>
+                        </div>
+                        <div class="flex justify-between mt-sm">
+                            <span class="text-on-surface-variant">Customer</span>
+                            <span id="receipt-name" class="font-bold text-primary">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-on-surface-variant">Address</span>
+                            <span id="receipt-address" class="font-bold text-primary text-right max-w-[200px] truncate">-</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant pb-sm">
+                            <span class="text-on-surface-variant">Billing Type</span>
+                            <span id="receipt-type" class="font-bold text-primary uppercase text-xs tracking-wider">-</span>
+                        </div>
+                        
+                        <div id="receipt-items-container" class="flex flex-col gap-xs py-sm border-b border-outline-variant">
+                            <!-- Items Injected Here -->
+                        </div>
+
+                        <div class="flex justify-between font-bold text-primary text-base pt-sm">
+                            <span>Amount Paid</span>
+                            <span id="receipt-total" class="text-secondary">₹0.00</span>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="w-full max-w-xs bg-primary text-on-primary py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest hover:bg-primary-container transition-colors shadow-lg mt-lg flex items-center justify-center gap-sm">
+                        <span class="material-symbols-outlined text-sm">home</span>
+                        <span>Return to Sanctuary</span>
+                    </a>
+                    <button id="btn-view-email" class="w-full max-w-xs border border-primary/30 text-primary py-md rounded-lg font-button-text text-button-text uppercase tracking-widest hover:bg-primary/5 transition-colors shadow-md mt-sm flex items-center justify-center gap-sm cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                        <span>View Confirmation Email</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Side: Order Summary Panel (5 Columns) -->
+        <div class="md:col-span-5 flex flex-col gap-lg order-1 md:order-2">
+            <div class="bg-white border border-outline-variant rounded-xl p-lg flex flex-col gap-md sticky top-md">
+                <h3 class="font-label-caps text-xs tracking-wider uppercase text-on-surface-variant font-bold">Order Summary</h3>
+                
+                <!-- Items list -->
+                <div id="summary-items-list" class="flex flex-col gap-md divide-y divide-outline-variant max-h-[300px] overflow-y-auto pr-sm">
+                    <!-- Dynamic summary items list injected here -->
+                </div>
+
+                <!-- Price breakdown -->
+                <div class="flex flex-col gap-sm border-t border-outline-variant pt-md text-sm">
+                    <div class="flex justify-between text-on-surface-variant">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">₹0.00</span>
+                    </div>
+                    <div class="flex justify-between text-on-surface-variant">
+                        <span>Shipping & Fees</span>
+                        <span id="summary-fee">₹0.00</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-primary text-base border-t border-outline-variant pt-sm mt-xs">
+                        <span>Total Cost</span>
+                        <span id="summary-total" class="text-secondary">₹0.00</span>
+                    </div>
+                </div>
+
+                <!-- Security Assurance -->
+                <div class="flex items-start gap-xs text-[10px] text-on-surface-variant opacity-80 pt-sm border-t border-outline-variant mt-sm">
+                    <span class="material-symbols-outlined text-primary text-base mt-[1px]">verified_user</span>
+                    <p>SSL Secured Checkout. Your billing transactions are processed using high-grade 256-bit bank encryption standards.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-outline-variant py-md text-center text-xs text-on-surface-variant mt-xl">
+        <p>&copy; 2026 Himalayan Homestays. All rights reserved.</p>
+    </footer>
+
+    <!-- Email Simulation Modal Overlay -->
+    <div id="email-preview-modal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center hidden p-md">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden animate-fade-in">
+            <!-- Modal Header -->
+            <div class="bg-surface-container border-b border-outline-variant px-lg py-md flex items-center justify-between">
+                <div class="flex items-center gap-sm">
+                    <span class="material-symbols-outlined text-primary text-xl">drafts</span>
+                    <h3 class="font-bold text-primary text-sm">Homestay Mail System (Inbox Simulator)</h3>
+                </div>
+                <button id="close-email-modal" class="text-primary hover:opacity-75 flex items-center p-xs cursor-pointer">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <!-- Email Meta Info -->
+            <div class="px-lg py-md bg-surface-container-low border-b border-outline-variant text-xs space-y-xs text-on-surface-variant font-sans">
+                <div><span class="font-bold text-primary">From:</span> harvest@appleorchards.com &lt;DJ's Harvest Himalayan Estates&gt;</div>
+                <div><span class="font-bold text-primary">To:</span> <span id="email-to-preview" class="underline">guest@example.com</span></div>
+                <div><span class="font-bold text-primary">Subject:</span> <span id="email-subject-preview" class="font-medium text-primary">Confirmation for order #ORD-XXXX</span></div>
+            </div>
+
+            <!-- Email Body Content Viewport -->
+            <div class="flex-1 overflow-y-auto p-lg bg-slate-100 no-scrollbar">
+                <div id="email-html-body" class="bg-white rounded-xl shadow-sm border border-outline-variant/60 max-w-xl mx-auto overflow-hidden">
+                    <!-- Dynamic template markup will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Script -->
+    <script>
+        function generateEmailTemplate(name, email, type, total, itemsHtml, receiptId) {
+            const isBooking = type === 'booking';
+            
+            // Delivery info or checkin instructions
+            let statusTitle = "";
+            let timelineHtml = "";
+            let servicesHtml = "";
+            
+            if (isBooking) {
+                statusTitle = "Your Booking is Confirmed!";
+                timelineHtml = `
+                    <div style="background-color: #f7f9f6; border-left: 4px solid #061b0e; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+                        <p style="margin: 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #737870; font-weight: bold;">Check-In Instructions</p>
+                        <p style="margin: 6px 0 0 0; font-size: 13px; color: #061b0e; line-height: 1.4;">
+                            <strong>Location:</strong> Kotgarh, Himachal Pradesh, India<br/>
+                            <strong>Host Contact:</strong> +91 98765 43210 (Ashish)<br/>
+                            <strong>Check-in Time:</strong> 1:00 PM onwards<br/>
+                            <strong>Check-out Time:</strong> 11:00 AM
+                        </p>
+                    </div>
+                `;
+                servicesHtml = `
+                    <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                        <h4 style="margin: 0 0 12px 0; font-size: 13px; color: #061b0e; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Included Services & Perks</h4>
+                        <div style="font-size: 12px; color: #4a5568; line-height: 1.6;">
+                            <div style="margin-bottom: 8px;">🍏 <strong>Organic Farm-to-Table Breakfast</strong>: Served daily at our dining glass-house.</div>
+                            <div style="margin-bottom: 8px;">⛰️ <strong>Guided Orchard Trail Walk</strong>: Daily morning walks around the historical 1924 apple patches.</div>
+                            <div style="margin-bottom: 8px;">🔥 <strong>Campfire & Himalayan Chai Session</strong>: Evening bonfire gatherings under the pine trees.</div>
+                            <div style="margin-bottom: 8px;">📶 <strong>Work-from-Orchard Ready</strong>: Cabins are fully enabled with high-speed backup power and Wi-Fi.</div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                statusTitle = "Your Organic Harvest is on its Way!";
+                timelineHtml = `
+                    <div style="background-color: #fcfcfc; border-left: 4px solid #b87a3d; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+                        <p style="margin: 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #737870; font-weight: bold;">Delivery & Dispatch Info</p>
+                        <p style="margin: 6px 0 0 0; font-size: 13px; color: #061b0e; line-height: 1.4;">
+                            <strong>Est. Dispatch:</strong> Within 24 hours (Freshly packed from estates)<br/>
+                            <strong>Delivery Duration:</strong> 3 - 5 business days<br/>
+                            <strong>Courier Partner:</strong> Indian Postal Express Air (Stewardship delivery)
+                        </p>
+                    </div>
+                `;
+                servicesHtml = `
+                    <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                        <h4 style="margin: 0 0 12px 0; font-size: 13px; color: #061b0e; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Sustainable Shipping Details</h4>
+                        <div style="font-size: 12px; color: #4a5568; line-height: 1.6;">
+                            <div style="margin-bottom: 8px;">📦 <strong>Zero-Waste Packaging</strong>: Fully compostable craft paper and high-density wood shavings cushioning.</div>
+                            <div style="margin-bottom: 8px;">📄 <strong>Heritage Recipe Card Included</strong>: A unique print of our traditional apple jam baking formula is inside your parcel.</div>
+                            <div style="margin-bottom: 8px;">🌿 <strong>Community Stewardship</strong>: 5% of this purchase supports high-altitude women weavers clusters in Kinnaur.</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            return `
+                <div style="font-family: 'Inter', system-ui, sans-serif; background-color: #ffffff; color: #1a202c; max-width: 600px; margin: 0 auto; overflow: hidden; border-radius: 8px; text-align: left;">
+                    <!-- Brand Banner -->
+                    <div style="background-color: #061b0e; color: #ffffff; padding: 24px; text-align: center;">
+                        <h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 300; letter-spacing: 1px; color: #ffffff;">DJ's Harvest</h1>
+                        <p style="margin: 4px 0 0 0; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #cbd5e0;">Himalayan Homestays & Organics</p>
+                    </div>
+                    
+                    <!-- Email Body Content -->
+                    <div style="padding: 24px;">
+                        <h2 style="margin: 0 0 16px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: #061b0e; font-weight: normal;">\${statusTitle}</h2>
+                        <p style="margin: 0 0 16px 0; font-size: 13px; line-height: 1.6; color: #4a5568;">
+                            Namaste <strong>\${name}</strong>,<br/><br/>
+                            Thank you for choosing DJ's Harvest Himalayan Homestay. Your order has been successfully placed under receipt number <strong>#\${receiptId}</strong>. Below are the complete transaction breakdown details.
+                        </p>
+                        
+                        <!-- Dispatch / Check-in info card -->
+                        \${timelineHtml}
+
+                        <!-- Summary Breakdown Table -->
+                        <div style="border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px; margin-bottom: 16px;">
+                            <h3 style="margin: 0 0 12px 0; font-size: 12px; color: #061b0e; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px; border-bottom: 1px solid #edf2f7; font-weight: bold;">Transaction breakdown</h3>
+                            <div style="margin-bottom: 12px; line-height: 1.6;">
+                                \${itemsHtml}
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14px; color: #061b0e; border-top: 1px solid #edf2f7; padding-top: 12px;">
+                                <span>Amount Paid (INR)</span>
+                                <span style="color: #b87a3d;">₹\${total}</span>
+                            </div>
+                        </div>
+
+                        <!-- Included Perks -->
+                        \${servicesHtml}
+
+                        <!-- Final Greetings -->
+                        <p style="margin: 24px 0 0 0; font-size: 12px; line-height: 1.6; color: #718096; text-align: center;">
+                            If you have any questions or require custom support, email us at <a href="mailto:harvest@appleorchards.com" style="color: #b87a3d; text-decoration: none;">harvest@appleorchards.com</a>.<br/>
+                            <em>Kotgarh, Himachal Pradesh, India</em>
+                        </p>
+                    </div>
+                    
+                    <!-- Email Footer -->
+                    <div style="background-color: #f7f9f6; padding: 16px; text-align: center; border-top: 1px solid #edf2f7; font-size: 10px; color: #718096;">
+                        <p style="margin: 0 0 4px 0; text-transform: uppercase; letter-spacing: 1px;">© 2024 DJ's Harvest Himalayan Homestays</p>
+                        <p style="margin: 0;">Sustainably managing heritage orchards since 1924.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+
+            // Load Context from localStorage
+            const checkoutType = localStorage.getItem('checkout_type') || 'cart';
+            let totalAmount = 0;
+            
+            // UI elements
+            const itemsList = document.getElementById('summary-items-list');
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const feeEl = document.getElementById('summary-fee');
+            const totalEl = document.getElementById('summary-total');
+            const payTotalBtn = document.getElementById('btn-pay-total');
+
+            // 1. POPULATE ORDER SUMMARY
+            if (checkoutType === 'booking') {
+                const booking = JSON.parse(localStorage.getItem('current_booking_details'));
+                if (!booking) {
+                    window.location.href = 'stay.html';
+                    return;
+                }
+
+                // Render booking item
+                itemsList.innerHTML = `
+                    <div class="flex gap-md py-sm">
+                        <div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center text-primary border border-outline-variant">
+                            <span class="material-symbols-outlined text-3xl">cottage</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-sm font-bold text-primary truncate">${booking.sanctuaryName}</h4>
+                            <p class="text-xs text-on-surface-variant mt-xs">${booking.nights} nights | ${booking.checkin} to ${booking.checkout}</p>
+                            <p class="text-xs text-primary font-bold mt-sm">₹${booking.rate}/night</p>
+                        </div>
+                    </div>
+                `;
+
+                const subtotal = booking.rate * booking.nights;
+                const fee = subtotal * 0.1;
+                totalAmount = subtotal + fee;
+
+                subtotalEl.textContent = `₹${subtotal.toFixed(2)}`;
+                feeEl.textContent = `₹${fee.toFixed(2)}`;
+                totalEl.textContent = `₹${totalAmount.toFixed(2)}`;
+                payTotalBtn.textContent = `₹${totalAmount.toFixed(2)}`;
+
+            } else {
+                // Cart Checkout
+                const cart = JSON.parse(localStorage.getItem('orchard_cart')) || [];
+                if (cart.length === 0) {
+                    window.location.href = 'shop.html';
+                    return;
+                }
+
+                itemsList.innerHTML = cart.map(item => `
+                    <div class="flex gap-md py-sm">
+                        <img src="${item.image}" alt="${item.title}" class="w-16 h-16 object-cover rounded-lg border border-outline-variant" />
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-sm font-bold text-primary truncate">${item.title}</h4>
+                            <p class="text-xs text-on-surface-variant mt-xs">Quantity: ${item.quantity}</p>
+                            <p class="text-xs text-primary font-bold mt-sm">₹${(item.price * item.quantity).toFixed(2)}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const fee = 15.00; // Flat shipping rate
+                totalAmount = subtotal + fee;
+
+                subtotalEl.textContent = `₹${subtotal.toFixed(2)}`;
+                feeEl.textContent = `₹${fee.toFixed(2)}`;
+                totalEl.textContent = `₹${totalAmount.toFixed(2)}`;
+                payTotalBtn.textContent = `₹${totalAmount.toFixed(2)}`;
+            }
+
+            // 2. STEPPER NAVIGATION FLOW
+            const stepTab1 = document.getElementById('step-tab-1');
+            const stepTab2 = document.getElementById('step-tab-2');
+            const stepTab3 = document.getElementById('step-tab-3');
+            
+            const formStep1 = document.getElementById('form-step-1');
+            const formStep2 = document.getElementById('form-step-2');
+            const formStep3 = document.getElementById('form-step-3');
+
+            const btnProceedToPay = document.getElementById('btn-proceed-to-pay');
+            const btnBackToStep1 = document.getElementById('btn-back-to-step1');
+            const btnPayNow = document.getElementById('btn-pay-now');
+
+            // Fields Step 1
+            const nameInput = document.getElementById('cust-name');
+            const emailInput = document.getElementById('cust-email');
+            const addressInput = document.getElementById('cust-address');
+            const cityInput = document.getElementById('cust-city');
+            const zipInput = document.getElementById('cust-zip');
+            const phoneInput = document.getElementById('cust-phone');
+
+            btnProceedToPay.addEventListener('click', () => {
+                // Validate fields
+                if (!nameInput.value || !emailInput.value || !addressInput.value || !cityInput.value || !zipInput.value || !phoneInput.value) {
+                    alert('Please complete all shipping and contact details.');
+                    return;
+                }
+
+                // Transition to Step 2
+                formStep1.classList.add('hidden');
+                formStep2.classList.remove('hidden');
+
+                // Stepper tabs
+                stepTab1.classList.add('opacity-50');
+                stepTab2.classList.remove('opacity-50');
+                
+                const cardInner = document.getElementById('credit-card-3d');
+                cardInner.classList.remove('flipped'); // Reset card
+            });
+
+            btnBackToStep1.addEventListener('click', () => {
+                formStep2.classList.add('hidden');
+                formStep1.classList.remove('hidden');
+                
+                stepTab2.classList.add('opacity-50');
+                stepTab1.classList.remove('opacity-50');
+            });
+
+            // 3. SECURE PAYMENT SIMULATION
+            btnPayNow.addEventListener('click', () => {
+                const cardHolder = document.getElementById('card-holder-input').value;
+                const cardNum = document.getElementById('card-number-input').value;
+                const cardExpiry = document.getElementById('card-expiry-input').value;
+                const cardCvv = document.getElementById('card-cvv-input').value;
+
+                if (!cardHolder || cardNum.length < 15 || cardExpiry.length < 5 || cardCvv.length < 3) {
+                    alert('Please provide valid credit card information.');
+                    return;
+                }
+
+                // Transition to Step 3 (Processing)
+                formStep2.classList.add('hidden');
+                formStep3.classList.remove('hidden');
+                stepTab2.classList.add('opacity-50');
+                stepTab3.classList.remove('opacity-50');
+
+                const loader = document.getElementById('payment-loader');
+                const successPanel = document.getElementById('payment-success');
+
+                // Simulate processing delay
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                    successPanel.classList.remove('hidden');
+
+                    const receiptId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+                    // Setup Invoice Receipt data
+                    document.getElementById('receipt-name').textContent = nameInput.value;
+                    document.getElementById('receipt-address').textContent = `${addressInput.value}, ${cityInput.value}`;
+                    document.getElementById('receipt-total').textContent = `₹${totalAmount.toFixed(2)}`;
+                    document.getElementById('receipt-type').textContent = checkoutType === 'booking' ? 'Accommodation Booking' : 'Store Organic Harvest';
+                    document.getElementById('receipt-id').textContent = '#' + receiptId;
+
+                    // Add items list to receipt & build HTML list for email
+                    let itemsHtmlForEmail = '';
+                    const receiptItems = document.getElementById('receipt-items-container');
+                    if (checkoutType === 'booking') {
+                        const booking = JSON.parse(localStorage.getItem('current_booking_details'));
+                        receiptItems.innerHTML = `
+                            <div class="flex justify-between text-xs text-on-surface-variant font-mono">
+                                <span>${booking.sanctuaryName} (${booking.nights} nights)</span>
+                                <span>₹${(booking.rate * booking.nights).toFixed(2)}</span>
+                            </div>
+                        `;
+                        itemsHtmlForEmail = `
+                            <div style="display: flex; justify-content: space-between; font-size: 13px; color: #4a5568; margin-bottom: 8px;">
+                                <span>${booking.sanctuaryName} (${booking.nights} nights)</span>
+                                <span>₹${(booking.rate * booking.nights).toFixed(2)}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #718096; margin-bottom: 4px;">
+                                <span>Service Fee (10%)</span>
+                                <span>₹${(booking.rate * booking.nights * 0.1).toFixed(2)}</span>
+                            </div>
+                        `;
+                    } else {
+                        const cart = JSON.parse(localStorage.getItem('orchard_cart')) || [];
+                        receiptItems.innerHTML = cart.map(item => `
+                            <div class="flex justify-between text-xs text-on-surface-variant font-mono">
+                                <span>${item.title} x${item.quantity}</span>
+                                <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+                            </div>
+                        `).join('');
+                        itemsHtmlForEmail = cart.map(item => `
+                            <div style="display: flex; justify-content: space-between; font-size: 13px; color: #4a5568; margin-bottom: 8px;">
+                                <span>${item.title} (x${item.quantity})</span>
+                                <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+                            </div>
+                        `).join('') + `
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #718096; margin-bottom: 4px;">
+                                <span>Eco Shipping Fee</span>
+                                <span>₹15.00</span>
+                            </div>
+                        `;
+                    }
+
+                    // Generate Email Body
+                    const emailSubject = checkoutType === 'booking' ? `Homestay Booking Confirmed (#${receiptId})` : `Organic Harvest Order Placed (#${receiptId})`;
+                    const emailBodyHtml = generateEmailTemplate(nameInput.value, emailInput.value, checkoutType, totalAmount.toFixed(2), itemsHtmlForEmail, receiptId);
+
+                    // Wire email buttons
+                    const viewEmailBtn = document.getElementById('btn-view-email');
+                    const emailModal = document.getElementById('email-preview-modal');
+                    const closeEmailModal = document.getElementById('close-email-modal');
+                    const emailToEl = document.getElementById('email-to-preview');
+                    const emailSubjEl = document.getElementById('email-subject-preview');
+                    const emailBodyEl = document.getElementById('email-html-body');
+
+                    if (viewEmailBtn && emailModal && emailBodyEl) {
+                        viewEmailBtn.addEventListener('click', () => {
+                            emailToEl.textContent = emailInput.value;
+                            emailSubjEl.textContent = emailSubject;
+                            emailBodyEl.innerHTML = emailBodyHtml;
+                            emailModal.classList.remove('hidden');
+                        });
+                    }
+
+                    if (closeEmailModal) {
+                        closeEmailModal.addEventListener('click', () => {
+                            emailModal.classList.add('hidden');
+                        });
+                    }
+
+                    // Trigger toast alert from main.js global utility
+                    if (typeof showToast === 'function') {
+                        showToast(`📧 Confirmation email sent to ${emailInput.value}!`, 'success');
+                    }
+
+                    // Clear state
+                    if (checkoutType === 'booking') {
+                        localStorage.removeItem('current_booking_details');
+                    } else {
+                        localStorage.setItem('orchard_cart', JSON.stringify([]));
+                    }
+                    
+                    // Trigger simple vanilla JS confetti effect
+                    triggerConfetti();
+
+                }, 3000);
+            });
+
+            // 4. INTERACTIVE CREDIT CARD DISPLAY SYNCHRONIZATION
+            const cardHolderInput = document.getElementById('card-holder-input');
+            const cardNumInput = document.getElementById('card-number-input');
+            const cardExpiryInput = document.getElementById('card-expiry-input');
+            const cardCvvInput = document.getElementById('card-cvv-input');
+            const cardInner = document.getElementById('credit-card-3d');
+
+            const cardHolderPreview = document.getElementById('card-holder-preview');
+            const cardNumPreview = document.getElementById('card-num-preview');
+            const cardExpiryPreview = document.getElementById('card-expiry-preview');
+            const cardCvvPreview = document.getElementById('card-cvv-preview');
+            const cardLogo = document.getElementById('card-type-logo');
+
+            cardHolderInput.addEventListener('input', (e) => {
+                cardHolderPreview.textContent = e.target.value.trim() || 'Your Name';
+            });
+
+            cardNumInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                let formatted = '';
+                for (let i = 0; i < value.length; i++) {
+                    if (i > 0 && i % 4 === 0) formatted += ' ';
+                    formatted += value[i];
+                }
+                e.target.value = formatted;
+                
+                // Update preview
+                let previewValue = formatted;
+                while (previewValue.length < 19) {
+                    const idx = previewValue.length;
+                    if (idx === 4 || idx === 9 || idx === 14) previewValue += ' ';
+                    else previewValue += '•';
+                }
+                cardNumPreview.textContent = previewValue;
+
+                // Card brand detection
+                if (value.startsWith('4')) {
+                    cardLogo.textContent = 'VISA';
+                } else if (value.startsWith('5')) {
+                    cardLogo.textContent = 'MC';
+                } else {
+                    cardLogo.textContent = 'CARD';
+                }
+            });
+
+            cardExpiryInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                if (value.length > 2) {
+                    e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                } else {
+                    e.target.value = value;
+                }
+                
+                let preview = e.target.value;
+                if (preview.length === 0) preview = 'MM/YY';
+                else if (preview.length === 1) preview += 'M/YY';
+                else if (preview.length === 2) preview += '/YY';
+                else if (preview.length === 3) preview += 'Y';
+                cardExpiryPreview.textContent = preview;
+            });
+
+            cardCvvInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                e.target.value = value;
+                cardCvvPreview.textContent = value || '•••';
+            });
+
+            // Focus events for 3D flipping
+            cardCvvInput.addEventListener('focus', () => {
+                cardInner.classList.add('flipped');
+            });
+            cardCvvInput.addEventListener('blur', () => {
+                cardInner.classList.remove('flipped');
+            });
+
+            // Confetti generation function
+            function triggerConfetti() {
+                const count = 120;
+                const defaults = { origin: { y: 0.7 } };
+                
+                for (let i = 0; i < count; i++) {
+                    const element = document.createElement('div');
+                    element.className = 'fixed pointer-events-none z-[100]';
+                    const size = Math.random() * 8 + 4;
+                    element.style.width = size + 'px';
+                    element.style.height = size + 'px';
+                    
+                    const colors = ['#061b0e', '#fc6451', '#4d6453', '#ffdad5', '#b4cdb8'];
+                    element.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    element.style.left = Math.random() * 100 + 'vw';
+                    element.style.top = '-10px';
+                    element.style.borderRadius = Math.random() > 0.5 ? '50%' : '0%';
+                    document.body.appendChild(element);
+                    
+                    const speed = Math.random() * 3 + 2;
+                    const spin = Math.random() * 360;
+                    
+                    let y = -10;
+                    let x = parseFloat(element.style.left);
+                    let angle = spin;
+                    
+                    const interval = setInterval(() => {
+                        y += speed;
+                        angle += 5;
+                        element.style.top = y + 'px';
+                        element.style.transform = `rotate(${angle}deg)`;
+                        if (y > window.innerHeight) {
+                            clearInterval(interval);
+                            element.remove();
+                        }
+                    }, 16);
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
