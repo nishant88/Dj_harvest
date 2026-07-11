@@ -61,24 +61,23 @@
                     href="stories.html">Stories</a>
             </div>
 
-            <div class="flex items-center gap-md">
+            <div class="flex items-center gap-sm">
                 <!-- Search box toggler -->
-                <button
-                    class="material-symbols-outlined text-on-surface-variant hover:text-primary p-xs cursor-pointer">search</button>
-
-                <!-- Shopping Bag icon -->
-                <button
-                    class="cart-toggle-btn material-symbols-outlined text-on-surface-variant hover:text-primary p-xs relative cursor-pointer">
-                    shopping_bag
-                    <span
-                        class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                <button class="w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-2xl">search</span>
                 </button>
 
-                <button
-                    class="booking-trigger-btn hidden md:block bg-secondary text-on-secondary px-lg py-xs rounded-lg font-button-text text-button-text hover:opacity-80 transition-all active:scale-95">Book
-                    Now</button>
-                <button class="mobile-menu-trigger md:hidden text-primary flex items-center">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
+                <!-- Shopping Bag icon -->
+                <button class="cart-toggle-btn w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center text-on-surface-variant hover:text-primary relative transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-2xl">shopping_bag</span>
+                    <span class="cart-badge-count absolute top-1 right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+
+                <button class="booking-trigger-btn hidden md:block bg-secondary text-on-secondary px-lg py-xs rounded-lg font-button-text text-button-text hover:opacity-80 transition-all active:scale-95">
+                    Book Now
+                </button>
+                <button class="mobile-menu-trigger md:hidden text-primary w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center transition-colors">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
                 </button>
             </div>
         </div>

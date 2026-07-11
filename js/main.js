@@ -233,22 +233,34 @@ function injectDynamicElements() {
     if (!document.getElementById('mobile-nav-menu')) {
         const mn = document.createElement('div');
         mn.id = 'mobile-nav-menu';
-        mn.className = 'fixed inset-0 z-50 bg-[#ffffff] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-lg hidden';
+        mn.className = 'fixed inset-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-3xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-lg hidden';
         mn.innerHTML = `
             <div class="flex justify-between items-center mb-2xl">
-                <span class="font-headline-md text-headline-md text-primary tracking-tighter">DJ's Harvest</span>
-                <button id="close-mobile-menu" class="text-primary p-xs flex items-center">
+                <span class="font-kalam font-bold text-3xl text-primary dark:text-white">DJ's Harvest</span>
+                <button id="close-mobile-menu" class="w-12 h-12 rounded-full hover:bg-primary/5 dark:hover:bg-white/5 flex items-center justify-center text-primary dark:text-white transition-colors">
                     <span class="material-symbols-outlined text-3xl">close</span>
                 </button>
             </div>
-            <div class="flex-1 flex flex-col justify-center gap-xl items-center text-center">
-                <a class="font-display-lg text-primary hover:opacity-70 transition-opacity" href="index.html">Home</a>
-                <a class="font-display-lg text-primary hover:opacity-70 transition-opacity" href="stay.html">Stay</a>
-                <a class="font-display-lg text-primary hover:opacity-70 transition-opacity" href="shop.html">Shop</a>
-                <a class="font-display-lg text-primary hover:opacity-70 transition-opacity" href="stories.html">Stories</a>
+            <div class="flex-1 flex flex-col justify-center gap-lg items-start text-left pl-lg border-l border-primary/10 dark:border-white/10">
+                <a class="group flex items-baseline gap-md py-sm w-full" href="index.html">
+                    <span class="font-mono text-xs text-secondary/60">01</span>
+                    <span class="font-headline-md text-4xl text-primary dark:text-white group-hover:text-secondary group-hover:translate-x-2 transition-all duration-200">Home</span>
+                </a>
+                <a class="group flex items-baseline gap-md py-sm w-full" href="stay.html">
+                    <span class="font-mono text-xs text-secondary/60">02</span>
+                    <span class="font-headline-md text-4xl text-primary dark:text-white group-hover:text-secondary group-hover:translate-x-2 transition-all duration-200">Stay</span>
+                </a>
+                <a class="group flex items-baseline gap-md py-sm w-full" href="shop.html">
+                    <span class="font-mono text-xs text-secondary/60">03</span>
+                    <span class="font-headline-md text-4xl text-primary dark:text-white group-hover:text-secondary group-hover:translate-x-2 transition-all duration-200">Shop</span>
+                </a>
+                <a class="group flex items-baseline gap-md py-sm w-full" href="stories.html">
+                    <span class="font-mono text-xs text-secondary/60">04</span>
+                    <span class="font-headline-md text-4xl text-primary dark:text-white group-hover:text-secondary group-hover:translate-x-2 transition-all duration-200">Stories</span>
+                </a>
             </div>
-            <div class="mt-auto">
-                <button class="booking-trigger-btn w-full bg-primary text-on-primary py-lg rounded-lg font-button-text text-button-text uppercase tracking-widest shadow-xl">
+            <div class="mt-auto pt-xl">
+                <button class="booking-trigger-btn w-full bg-secondary hover:bg-secondary-container text-on-secondary py-lg rounded-xl font-button-text text-button-text uppercase tracking-widest shadow-xl transition-all active:scale-95">
                     Book Stay
                 </button>
                 <p class="text-center text-[10px] text-on-surface-variant font-label-caps uppercase tracking-widest mt-md">© 2024 DJ's Harvest Himalayan Homestays</p>
