@@ -233,7 +233,7 @@ function injectDynamicElements() {
     if (!document.getElementById('mobile-nav-menu')) {
         const mn = document.createElement('div');
         mn.id = 'mobile-nav-menu';
-        mn.className = 'fixed inset-0 z-50 bg-[#ffffff] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-lg';
+        mn.className = 'fixed inset-0 z-50 bg-[#ffffff] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-lg hidden';
         mn.innerHTML = `
             <div class="flex justify-between items-center mb-2xl">
                 <span class="font-headline-md text-headline-md text-primary tracking-tighter">DJ's Harvest</span>
@@ -734,12 +734,23 @@ function setupCartEngine() {
 // -------------------------------------------------------------
 function openMobileMenu() {
     const menu = document.getElementById('mobile-nav-menu');
-    if (menu) menu.classList.replace('translate-x-full', 'translate-x-0');
+    if (menu) {
+        menu.classList.remove('hidden');
+        menu.offsetHeight; // force reflow
+        menu.classList.replace('translate-x-full', 'translate-x-0');
+    }
 }
 
 function closeMobileMenu() {
     const menu = document.getElementById('mobile-nav-menu');
-    if (menu) menu.classList.replace('translate-x-0', 'translate-x-full');
+    if (menu) {
+        menu.classList.replace('translate-x-0', 'translate-x-full');
+        setTimeout(() => {
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.add('hidden');
+            }
+        }, 300);
+    }
 }
 
 function setupMobileMenu() {
