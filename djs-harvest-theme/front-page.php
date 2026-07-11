@@ -287,7 +287,7 @@
             <div class="mt-2xl">
                 <div class="flex items-center justify-between mb-lg">
                     <h3 class="font-label-caps text-label-caps text-primary tracking-widest uppercase">
-                        @AppleOrchardsHomestay</h3>
+                        @DJsHarvestHomestay</h3>
                     <a class="text-secondary text-xs font-bold underline underline-offset-4" href="stories.html">Follow
                         our journal</a>
                 </div>

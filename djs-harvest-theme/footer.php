@@ -38,7 +38,7 @@
                         <span class="material-symbols-outlined">public</span>
                     </a>
                     <a class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-secondary transition-colors text-primary"
-                        href="mailto:harvest@appleorchards.com">
+                        href="mailto:harvest@djsharvest.com">
                         <span class="material-symbols-outlined">mail</span>
                     </a>
                     <a class="whatsapp-footer-link w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-[#25D366] transition-colors text-primary hover:text-[#25D366]"

@@ -328,7 +328,7 @@ function injectDynamicElements() {
         if (!footerSocials.querySelector('.whatsapp-footer-link')) {
             const waFooterLink = document.createElement('a');
             waFooterLink.className = 'whatsapp-footer-link w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-[#25D366] transition-colors text-primary hover:text-[#25D366]';
-            waFooterLink.href = 'https://wa.me/919876543210?text=Hi%20there!%20I\'m%20interested%20in%20booking%20a%20sanctuary%20at%20Apple%20Orchards.';
+            waFooterLink.href = 'https://wa.me/919876543210?text=Hi%20there!%20I\'m%20interested%20in%20booking%20a%20sanctuary%20at%20DJ\'s%20Harvest.';
             waFooterLink.target = '_blank';
             waFooterLink.rel = 'noopener noreferrer';
             waFooterLink.innerHTML = `
@@ -786,6 +786,14 @@ function setupMobileMenu() {
 
     const closeBtn = document.getElementById('close-mobile-menu');
     if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+    
+    // Add close button listeners matching unified components markup
+    document.querySelectorAll('.mobile-menu-close').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMobileMenu();
+        });
+    });
 }
 
 // -------------------------------------------------------------
