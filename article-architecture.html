@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+
 <html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Designing for Stillness: Architecture of the Peaks | Mountain Journal</title>
-    
-    <!-- Scripts & Styles -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="js/tailwind.config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500&family=Manrope:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/style.css" />
-    
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Designing for Stillness: Architecture of the Peaks | Mountain Journal</title>
+<!-- Scripts & Styles -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500&amp;family=Manrope:wght@500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
@@ -24,117 +23,95 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
-
-    <!-- TopNavBar -->
-    <header id="global-header"></header>
-
-    <!-- Article Wrapper -->
-    <main class="pt-3xl">
-        
-        <!-- Hero Header -->
-        <section class="max-w-4xl mx-auto px-lg mt-xl mb-2xl text-center md:text-left flex flex-col items-center md:items-start">
-            <div class="mb-lg w-full flex flex-col items-center md:items-start">
-                <a href="stories.html" class="inline-flex items-center justify-center gap-xs font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors mb-md uppercase tracking-wider">
-                    <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Journal
+<!-- TopNavBar -->
+<header id="global-header"></header>
+<!-- Article Wrapper -->
+<main class="pt-3xl">
+<!-- Hero Header -->
+<section class="max-w-4xl mx-auto px-lg mt-xl mb-2xl text-center md:text-left flex flex-col items-center md:items-start">
+<div class="mb-lg w-full flex flex-col items-center md:items-start">
+<a class="inline-flex items-center justify-center gap-xs font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors mb-md uppercase tracking-wider" href="stories.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Back to Journal
                 </a>
-                <div class="flex items-center justify-center md:justify-start gap-sm mb-sm">
-                    <span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-wider">Mountain Living</span>
-                    <span class="text-outline text-xs">•</span>
-                    <span class="text-xs text-on-surface-variant font-medium uppercase tracking-wider font-label-caps">10 Min Read</span>
-                </div>
-                <h1 class="font-display-lg-mobile md:font-display-lg text-primary leading-tight mb-md text-center md:text-left">Designing for Stillness: Architecture of the Peaks</h1>
-                <p class="text-on-surface-variant text-body-lg leading-relaxed max-w-3xl text-center md:text-left mx-auto md:mx-0">
-                    How we integrated sustainable mountain architecture with modern luxury to create the DJ's Harvest retreat.
-                </p>
-            </div>
-
-            <!-- Author & Share Card -->
-            <div class="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-md border-y border-outline-variant py-md">
-                <div class="flex items-center gap-md">
-                    <div class="w-10 h-10 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2cQn8-D5vk9fDTTaEZMjgcZnZklAodI6zs6BK4q3zBeiP8NyCaLT7P3lxuCS5QWjGx1vUXtTmTwQWEJSn66t0Y3N2u3M1HBQceQGJxcTp9KrfZ5T0vNebzf0G66mpNxMbOolGmSJzdwFG_m9QyYF53fWyt_f6jwJLp790fkTTLg6N-Sth49Im0i4SMl-hnsdxubscQU_lWKdzIQ8icDUfJfW2cIfCv5dbNQq3UpVrJ35a5ue-9fHjGg')"></div>
-                    <div>
-                        <p class="font-bold text-primary text-sm">Rohan Malhotra</p>
-                        <p class="text-[10px] text-on-surface-variant font-label-caps uppercase">Lead Architect & Design Consultant</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-sm">
-                    <button class="bookmark-btn flex items-center justify-center w-8 h-8 rounded-full border border-outline-variant hover:bg-surface-container transition-colors text-primary" data-title="Designing for Stillness: Architecture of the Peaks">
-                        <span class="material-symbols-outlined text-[18px]">bookmark</span>
-                    </button>
-                    <button class="flex items-center justify-center w-8 h-8 rounded-full border border-outline-variant hover:bg-surface-container transition-colors text-primary" onclick="navigator.clipboard.writeText(window.location.href); alert('Article link copied to clipboard!');">
-                        <span class="material-symbols-outlined text-[18px]">share</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Article Banner Image -->
-        <section class="max-w-7xl mx-auto px-lg mb-2xl">
-            <div class="h-96 md:h-[450px] w-full rounded-2xl overflow-hidden shadow-lg">
-                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIejXrUeqqT1lCJ5f6fyX2U5PlR5zdCVCCRnXOTxg9koER3pdznsqFGO5RBlfdpKD233OVLOA_TD2EnabyGwemJql1emnnZEvxNiuGET9JB0y2Rq0q3BlDUslWts6G90-0TEKLtUGRvBPVvoN5SBrKujDNlF_lCIFwMAd6mGWoAzRYGJ3z2b_HO7ex6FanQhkxJA2UpOg-w68lsqnHMUz3iORt1_11k4cyhn-3rx7q6kA5aIG8KY9ZQ" alt="Interior shot of a modern, minimalist cabin." />
-            </div>
-        </section>
-
-        <!-- Article Body -->
-        <section class="max-w-4xl mx-auto px-lg mb-3xl">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
-                <!-- Sidebar metadata desktop -->
-                <aside class="hidden md:block md:col-span-3 space-y-lg">
-                    <div>
-                        <h4 class="font-label-caps text-[10px] text-outline uppercase font-bold tracking-widest mb-xs">Published</h4>
-                        <p class="text-sm font-medium text-primary">July 30, 2024</p>
-                    </div>
-                    <div>
-                        <h4 class="font-label-caps text-[10px] text-outline uppercase font-bold tracking-widest mb-xs">Architectural Style</h4>
-                        <p class="text-sm font-medium text-primary">Modern Kath-Kuni</p>
-                    </div>
-                    <div>
-                        <h4 class="font-label-caps text-[10px] text-outline uppercase font-bold tracking-widest mb-xs">Primary Elements</h4>
-                        <p class="text-sm font-medium text-primary">Local stone, Deodar timber, Glass</p>
-                    </div>
-                </aside>
-
-                <!-- Text Content -->
-                <div class="md:col-span-9 space-y-lg text-on-surface/90 leading-relaxed text-base md:text-lg">
-                    <p class="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-xs first-letter:text-primary">
-                        When designing the structures of the Himalayan retreat, our core philosophy was minimal intervention. The mountain slope dictates the foundation, not the other way around. We integrated local stone-cutting masonry, untreated pine timbers, and modern glass facets that frame the landscape like living art canvases.
-                    </p>
-                    
-                    <p>
-                        We drew inspiration from Kath-Kuni architecture—a traditional building technique using alternating layers of dry stone and deodar wood without mortar, making structures highly flexible and naturally resistant to mountain tremors.
-                    </p>
-
-                    <blockquote class="border-l-4 border-secondary pl-lg my-lg italic font-headline-sm text-primary py-xs">
+<div class="flex items-center justify-center md:justify-start gap-sm mb-sm">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-wider">Mountain Living</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-xs text-on-surface-variant font-medium uppercase tracking-wider font-label-caps">10 Min Read</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary leading-tight mb-md text-center md:text-left">Designing for Stillness: Architecture of the Peaks</h1>
+<p class="text-on-surface-variant text-body-lg leading-relaxed max-w-3xl text-center md:text-left mx-auto md:mx-0">How we integrated sustainable mountain architecture with modern luxury to create the DJ's Harvest retreat.</p>
+</div>
+<!-- Author & Share Card -->
+<div class="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-md border-y border-outline-variant py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2cQn8-D5vk9fDTTaEZMjgcZnZklAodI6zs6BK4q3zBeiP8NyCaLT7P3lxuCS5QWjGx1vUXtTmTwQWEJSn66t0Y3N2u3M1HBQceQGJxcTp9KrfZ5T0vNebzf0G66mpNxMbOolGmSJzdwFG_m9QyYF53fWyt_f6jwJLp790fkTTLg6N-Sth49Im0i4SMl-hnsdxubscQU_lWKdzIQ8icDUfJfW2cIfCv5dbNQq3UpVrJ35a5ue-9fHjGg')"></div>
+<div>
+<p class="font-bold text-primary text-sm">Deepika Chauhan </p>
+<p class="text-[10px] text-on-surface-variant font-label-caps uppercase">Farmer &amp; Travel Enthusiast </p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="bookmark-btn flex items-center justify-center w-8 h-8 rounded-full border border-outline-variant hover:bg-surface-container transition-colors text-primary" data-title="Designing for Stillness: Architecture of the Peaks">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+<button class="flex items-center justify-center w-8 h-8 rounded-full border border-outline-variant hover:bg-surface-container transition-colors text-primary" onclick="navigator.clipboard.writeText(window.location.href); alert('Article link copied to clipboard!');">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Article Banner Image -->
+<section class="max-w-7xl mx-auto px-lg mb-2xl">
+<div class="h-96 md:h-[450px] w-full rounded-2xl overflow-hidden shadow-lg">
+<img alt="Interior shot of a modern, minimalist cabin." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIejXrUeqqT1lCJ5f6fyX2U5PlR5zdCVCCRnXOTxg9koER3pdznsqFGO5RBlfdpKD233OVLOA_TD2EnabyGwemJql1emnnZEvxNiuGET9JB0y2Rq0q3BlDUslWts6G90-0TEKLtUGRvBPVvoN5SBrKujDNlF_lCIFwMAd6mGWoAzRYGJ3z2b_HO7ex6FanQhkxJA2UpOg-w68lsqnHMUz3iORt1_11k4cyhn-3rx7q6kA5aIG8KY9ZQ"/>
+</div>
+</section>
+<!-- Article Body -->
+<section class="max-w-4xl mx-auto px-lg mb-3xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
+<!-- Sidebar metadata desktop -->
+<aside class="hidden md:block md:col-span-3 space-y-lg">
+<div>
+<h4 class="font-label-caps text-[10px] text-outline uppercase font-bold tracking-widest mb-xs">Published</h4>
+<p class="text-sm font-medium text-primary">July 30, 2026</p>
+</div>
+<div>
+<h4 class="font-label-caps text-[10px] text-outline uppercase font-bold tracking-widest mb-xs">Architectural Style</h4>
+<p class="text-sm font-medium text-primary">Modern Kath-Kuni</p>
+</div>
+<div>
+<h4 class="font-label-caps text-[10px] text-outline uppercase font-bold tracking-widest mb-xs">Primary Elements</h4>
+<p class="text-sm font-medium text-primary">Local stone, Deodar timber, Glass</p>
+</div>
+</aside>
+<!-- Text Content -->
+<div class="md:col-span-9 space-y-lg text-on-surface/90 leading-relaxed text-base md:text-lg">
+<p class="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-xs first-letter:text-primary">When designing the structures of the Himalayan retreat, our core philosophy was minimal intervention. The mountain slope dictates the foundation, not the other way around. We integrated local stone-cutting masonry, untreated pine timbers, and modern glass facets that frame the landscape like living art canvases.</p>
+<p>We drew inspiration from Kath-Kuni architecture—a traditional building technique using alternating layers of dry stone and deodar wood without mortar, making structures highly flexible and naturally resistant to mountain tremors.</p>
+<blockquote class="border-l-4 border-secondary pl-lg my-lg italic font-headline-sm text-primary py-xs">
                         "Stillness is not just the absence of noise; it is a structural design logic where high ceilings, local timber, and insulation collaborate to filter the mind's clutter."
                     </blockquote>
-
-                    <p>
-                        The interior spaces prioritize silence: high ceilings trap warm convective air currents, double-glazed panoramic windows provide superior acoustic isolation, and natural sheep wool rugs damp high-frequency echoes, creating a sensory sanctuary of pure peace.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter Section -->
-        <section class="max-w-7xl mx-auto px-lg mb-3xl">
-            <div class="bg-primary text-on-primary rounded-2xl p-xl text-center space-y-md max-w-4xl mx-auto">
-                <span class="font-label-caps text-xs tracking-[0.2em] uppercase text-on-primary-variant opacity-80 block">Orchard Correspondence</span>
-                <h2 class="font-headline-md text-headline-md text-white">Subscribe to the Mountain Journal</h2>
-                <p class="text-on-primary/80 max-w-xl mx-auto text-sm">Receive seasonal recipes, stories from Kotgarh artisans, and early harvest alerts direct from the retreat.</p>
-                <form class="flex flex-col sm:flex-row gap-sm max-w-md mx-auto pt-sm">
-                    <input class="bg-white/10 border border-white/20 rounded-lg px-md py-sm text-white placeholder:text-white/40 focus:ring-1 focus:ring-secondary w-full text-sm outline-none" placeholder="Enter your email address" type="email" required/>
-                    <button class="bg-secondary text-on-secondary px-lg py-sm rounded-lg hover:opacity-90 transition-opacity font-button-text text-button-text uppercase tracking-widest text-xs whitespace-nowrap cursor-pointer">Subscribe</button>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer id="global-footer"></footer>
-
-    <!-- Shared Logic & Scripts -->
-    <script src="js/components.js"></script>
-    <script src="js/main.js"></script>
+<p>The interior spaces prioritize silence: high ceilings trap warm convective air currents, double-glazed panoramic windows provide superior acoustic isolation, and natural sheep wool rugs damp high-frequency echoes, creating a sensory sanctuary of pure peace.</p>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="max-w-7xl mx-auto px-lg mb-3xl">
+<div class="bg-primary text-on-primary rounded-2xl p-xl text-center space-y-md max-w-4xl mx-auto">
+<span class="font-label-caps text-xs tracking-[0.2em] uppercase text-on-primary-variant opacity-80 block">Orchard Correspondence</span>
+<h2 class="font-headline-md text-headline-md text-white">Subscribe to the Mountain Journal</h2>
+<p class="text-on-primary/80 max-w-xl mx-auto text-sm">Receive seasonal recipes, stories from Kotgarh artisans, and early harvest alerts direct from the retreat.</p>
+<form class="flex flex-col sm:flex-row gap-sm max-w-md mx-auto pt-sm">
+<input class="bg-white/10 border border-white/20 rounded-lg px-md py-sm text-white placeholder:text-white/40 focus:ring-1 focus:ring-secondary w-full text-sm outline-none" placeholder="Enter your email address" required="" type="email"/>
+<button class="bg-secondary text-on-secondary px-lg py-sm rounded-lg hover:opacity-90 transition-opacity font-button-text text-button-text uppercase tracking-widest text-xs whitespace-nowrap cursor-pointer">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="global-footer"></footer>
+<!-- Shared Logic & Scripts -->
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
