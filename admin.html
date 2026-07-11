@@ -3,130 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ's Harvest | Live CMS Dashboard</title>
+    <title>DJ's Harvest | Premium Visual CMS</title>
     
     <!-- Scripts & Fonts -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     
     <style>
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #fbf9f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fafbfc;
         }
-        .glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(27, 48, 34, 0.05);
+        .canvas-bg {
+            background-color: #f1f3f5;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 16px 16px;
         }
-        /* Custom scrollbar */
+        .active-tab {
+            background-color: #1b3022;
+            color: #ffffff !important;
+            box-shadow: 0px 8px 20px rgba(27, 48, 34, 0.15);
+        }
+        /* Custom scrollbars */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
             background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1b302250;
+            background: #cbd5e1;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #1b302290;
+            background: #94a3b8;
         }
     </style>
 </head>
 <body class="text-slate-800 h-screen flex flex-col overflow-hidden">
 
-    <!-- Top Admin Header -->
-    <header class="w-full bg-[#1b3022] text-white px-lg py-md flex items-center justify-between shadow-md z-10">
+    <!-- White Modern Top Bar -->
+    <header class="w-full bg-white border-b border-slate-100 px-xl py-md flex items-center justify-between z-10 shrink-0">
         <div class="flex items-center gap-md">
-            <span class="material-symbols-outlined text-secondary text-3xl">settings_applications</span>
+            <div class="w-10 h-10 rounded-xl bg-[#1b3022]/5 flex items-center justify-center text-[#1b3022] border border-[#1b3022]/10">
+                <span class="material-symbols-outlined text-2xl font-semibold">edit_note</span>
+            </div>
             <div>
-                <h1 class="font-semibold text-lg leading-none">DJ's Harvest CMS</h1>
-                <p class="text-[10px] opacity-75 uppercase tracking-widest mt-xs">Visual Site Editor & Live Publishing Engine</p>
+                <h1 class="font-bold text-base text-[#1b3022] tracking-tight">DJ's Harvest CMS</h1>
+                <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Visual Content Management System</p>
             </div>
         </div>
-        <div class="flex items-center gap-md">
-            <a href="index.html" target="_blank" class="text-xs bg-white/10 hover:bg-white/20 transition-all px-lg py-sm rounded-lg flex items-center gap-sm">
+        
+        <div class="flex items-center gap-lg">
+            <a href="index.html" target="_blank" class="text-xs text-slate-600 hover:text-primary transition-all font-semibold flex items-center gap-sm bg-slate-50 hover:bg-slate-100 border border-slate-200/60 px-md py-sm rounded-xl">
                 <span class="material-symbols-outlined text-sm">open_in_new</span>
-                <span>View Live Site</span>
+                <span>Open Live Site</span>
             </a>
-            <div class="flex items-center gap-xs text-[10px] uppercase font-bold tracking-widest bg-emerald-500/20 text-emerald-300 px-md py-xs rounded-full border border-emerald-500/30">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Server Connected</span>
+            <div class="flex items-center gap-sm text-[10px] uppercase font-bold tracking-wider bg-emerald-50 text-emerald-700 px-md py-sm rounded-xl border border-emerald-100">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Connected</span>
             </div>
         </div>
     </header>
 
-    <!-- Main CMS Workspace -->
+    <!-- CMS Workspace Area -->
     <main class="flex-1 flex overflow-hidden">
         
-        <!-- Column 1: Sidebar Page Navigation -->
-        <aside class="w-64 border-r border-[#1b3022]/10 bg-white flex flex-col justify-between shrink-0">
-            <div class="p-lg">
-                <h2 class="text-xs uppercase font-bold tracking-wider text-slate-400 mb-lg">Select Page to Edit</h2>
-                <nav class="space-y-sm" id="page-list">
-                    <!-- Dynamic page items list injected here -->
-                    <div class="animate-pulse space-y-md">
-                        <div class="h-8 bg-slate-100 rounded-lg"></div>
-                        <div class="h-8 bg-slate-100 rounded-lg"></div>
-                        <div class="h-8 bg-slate-100 rounded-lg"></div>
-                    </div>
-                </nav>
+        <!-- Column 1: Sidebar (Page Navigator & Search) -->
+        <aside class="w-72 border-r border-slate-100 bg-white flex flex-col overflow-hidden shrink-0">
+            <!-- Search & Info -->
+            <div class="p-lg border-b border-slate-50 flex flex-col gap-md">
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-md text-slate-400 text-lg">search</span>
+                    <input type="text" id="page-search" oninput="filterPages()" placeholder="Search pages or articles..." 
+                        class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-2xl pr-md py-sm text-xs font-medium focus:ring-2 focus:ring-[#1b3022]/10 focus:border-[#1b3022] outline-none transition-all placeholder:text-slate-400">
+                </div>
             </div>
-            <div class="p-lg bg-[#1b3022]/5 border-t border-[#1b3022]/10 text-center">
-                <p class="text-[10px] text-slate-500 uppercase tracking-widest">© 2026 DJ's Harvest Engine</p>
+
+            <!-- Scrollable Page List -->
+            <div class="flex-1 overflow-y-auto px-md py-lg space-y-lg">
+                <!-- Main Pages Section -->
+                <div>
+                    <h3 class="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-md mb-sm">Website Sections</h3>
+                    <nav class="space-y-xs" id="main-pages-list">
+                        <!-- Injected Main Pages -->
+                        <div class="animate-pulse space-y-sm px-md">
+                            <div class="h-9 bg-slate-100 rounded-xl"></div>
+                            <div class="h-9 bg-slate-100 rounded-xl"></div>
+                        </div>
+                    </nav>
+                </div>
+                
+                <!-- Articles Section -->
+                <div>
+                    <h3 class="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-md mb-sm">Journal Articles</h3>
+                    <nav class="space-y-xs" id="articles-list">
+                        <!-- Injected Articles -->
+                        <div class="animate-pulse space-y-sm px-md">
+                            <div class="h-9 bg-slate-100 rounded-xl"></div>
+                            <div class="h-9 bg-slate-100 rounded-xl"></div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Footer Details -->
+            <div class="p-lg border-t border-slate-100 bg-slate-50/50 text-center shrink-0">
+                <p class="text-[9px] text-slate-400 font-semibold uppercase tracking-widest">Powered by Flask & BeautifulSoup4</p>
             </div>
         </aside>
 
-        <!-- Column 2: Content Form Editor -->
-        <section class="w-[450px] border-r border-[#1b3022]/10 bg-[#fefdfc] flex flex-col justify-between shrink-0">
-            <div class="flex-1 overflow-y-auto p-lg space-y-xl" id="editor-container">
-                <div class="flex flex-col items-center justify-center h-full text-center text-slate-400">
-                    <span class="material-symbols-outlined text-5xl mb-md">article</span>
-                    <p class="text-sm">Choose a page from the sidebar to begin editing its content.</p>
+        <!-- Column 2: Document Form Editor -->
+        <section class="w-[500px] border-r border-slate-100 bg-white flex flex-col overflow-hidden shrink-0">
+            <!-- Form Scrollable View -->
+            <div class="flex-1 overflow-y-auto p-lg space-y-lg" id="editor-container">
+                <div class="flex flex-col items-center justify-center h-full text-center text-slate-400 p-xl">
+                    <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-lg border border-slate-100">
+                        <span class="material-symbols-outlined text-3xl text-slate-400">browser_updated</span>
+                    </div>
+                    <h3 class="font-bold text-slate-700 text-sm mb-xs">Select a Document</h3>
+                    <p class="text-xs text-slate-500 max-w-[240px] mx-auto leading-relaxed">Choose any page or article from the left navigation panel to customize text blocks and inventory prices.</p>
                 </div>
             </div>
             
-            <!-- Editor Publish Actions Footer -->
-            <div class="p-lg border-t border-[#1b3022]/10 bg-white flex flex-col gap-sm shrink-0" id="editor-actions-footer" style="display: none;">
-                <button id="save-btn" onclick="savePageChanges()" class="w-full bg-[#1b3022] hover:bg-[#253e2d] text-white py-lg rounded-xl font-medium shadow-md transition-all active:scale-95 flex items-center justify-center gap-sm">
-                    <span class="material-symbols-outlined text-md">publish</span>
-                    <span>Save & Publish Changes</span>
+            <!-- Editor Actions Box -->
+            <div class="p-lg border-t border-slate-100 bg-slate-50/40 flex flex-col gap-sm shrink-0" id="editor-actions-footer" style="display: none;">
+                <button id="save-btn" onclick="savePageChanges()" class="w-full bg-[#1b3022] hover:bg-[#253e2d] text-white py-lg rounded-xl font-semibold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-sm">
+                    <span class="material-symbols-outlined text-md">check_circle</span>
+                    <span>Publish Content Updates</span>
                 </button>
-                <p class="text-center text-[10px] text-slate-400">Publishing compiles changes, updates the files, and commits to GitHub.</p>
+                <p class="text-center text-[10px] text-slate-400">Saves locally and synchronizes commits with your GitHub repository.</p>
             </div>
         </section>
 
-        <!-- Column 3: Live Preview Frame -->
-        <section class="flex-1 bg-slate-200 relative">
-            <!-- Loading Indicator -->
-            <div id="preview-loader" class="absolute inset-0 bg-white/70 backdrop-blur-sm flex flex-col items-center justify-center z-20" style="display: none;">
-                <svg class="animate-spin h-10 w-10 text-[#1b3022] mb-md" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <p class="text-xs uppercase tracking-widest text-slate-600 font-medium">Updating Live Preview...</p>
-            </div>
+        <!-- Column 3: Live Preview Canvas -->
+        <section class="flex-1 canvas-bg flex flex-col overflow-hidden">
             
-            <iframe id="preview-iframe" class="w-full h-full border-none bg-white" src="about:blank"></iframe>
+            <!-- Preview Controls Bar -->
+            <div class="w-full bg-white border-b border-slate-100 px-lg py-sm flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-sm">
+                    <span class="w-2 h-2 rounded-full bg-slate-300" id="preview-status-dot"></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500" id="preview-status-text">Draft Preview</span>
+                </div>
+                
+                <!-- Resolution Device Switcher -->
+                <div class="flex items-center gap-xs bg-slate-100 p-1 rounded-xl">
+                    <button onclick="setPreviewSize('desktop', this)" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-600 bg-white shadow-sm transition-all" title="Desktop View">
+                        <span class="material-symbols-outlined text-lg">desktop_windows</span>
+                    </button>
+                    <button onclick="setPreviewSize('tablet', this)" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-800 transition-all" title="Tablet View">
+                        <span class="material-symbols-outlined text-lg">tablet_mac</span>
+                    </button>
+                    <button onclick="setPreviewSize('mobile', this)" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-800 transition-all" title="Mobile View">
+                        <span class="material-symbols-outlined text-lg">smartphone</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preview Frame Wrapper -->
+            <div class="flex-1 flex items-center justify-center p-lg overflow-hidden relative">
+                <!-- Loader Overlay -->
+                <div id="preview-loader" class="absolute inset-0 bg-white/70 backdrop-blur-sm flex flex-col items-center justify-center z-20" style="display: none;">
+                    <svg class="animate-spin h-8 w-8 text-[#1b3022] mb-md" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <p class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Mounting Frame Preview...</p>
+                </div>
+                
+                <div id="iframe-wrapper" class="w-full h-full rounded-2xl shadow-xl border border-slate-200/50 bg-white overflow-hidden transition-all duration-300">
+                    <iframe id="preview-iframe" class="w-full h-full border-none" src="about:blank"></iframe>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <!-- Success / Info Toasts -->
-    <div id="toast" class="fixed bottom-lg right-lg bg-slate-900 text-white px-lg py-md rounded-xl shadow-2xl transition-all duration-300 translate-y-20 opacity-0 z-50 flex items-center gap-sm">
-        <span class="material-symbols-outlined text-emerald-400" id="toast-icon">check_circle</span>
-        <span class="text-sm font-medium" id="toast-text">Success Message</span>
+    <!-- Premium Toast Alerts -->
+    <div id="toast" class="fixed bottom-lg right-lg bg-white border border-slate-100 px-lg py-md rounded-2xl shadow-[0px_20px_50px_rgba(27,48,34,0.1)] transition-all duration-300 translate-y-20 opacity-0 z-50 flex items-center gap-sm">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600" id="toast-badge">
+            <span class="material-symbols-outlined text-lg" id="toast-icon">check_circle</span>
+        </div>
+        <div class="text-xs">
+            <p class="font-bold text-slate-800" id="toast-title">System Status</p>
+            <p class="text-slate-500 mt-0.5" id="toast-text">All modifications published successfully.</p>
+        </div>
     </div>
 
-    <!-- JS Logic -->
+    <!-- UI Interaction Scripts -->
     <script>
         let currentFilename = "";
         let pageElements = [];
+        let allPages = [];
 
-        // 1. Fetch all pages on startup
+        // 1. Fetch initial layouts list
         document.addEventListener('DOMContentLoaded', () => {
             fetchPages();
         });
@@ -135,44 +205,72 @@
             fetch('/api/pages')
                 .then(res => res.json())
                 .then(data => {
-                    const pageList = document.getElementById('page-list');
-                    pageList.innerHTML = '';
-                    
-                    data.forEach(page => {
-                        const btn = document.createElement('button');
-                        btn.className = 'w-full text-left px-md py-sm rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors flex items-center justify-between group';
-                        btn.onclick = () => loadPage(page.filename, btn);
-                        btn.innerHTML = `
-                            <span class="text-slate-700 group-hover:text-[#1b3022]">${page.label}</span>
-                            <span class="font-mono text-[9px] text-slate-400">${page.filename}</span>
-                        `;
-                        pageList.appendChild(btn);
-                    });
+                    allPages = data;
+                    renderSidebar(data);
                 })
                 .catch(err => {
-                    showToast('Failed to load page list.', 'error');
+                    showToast('Failed to connect to Flask server.', 'error');
                 });
         }
 
-        // 2. Load selected page editor form & iframe
+        // 2. Render categorized sidebar
+        function renderSidebar(pages) {
+            const mainPagesContainer = document.getElementById('main-pages-list');
+            const articlesContainer = document.getElementById('articles-list');
+            
+            mainPagesContainer.innerHTML = '';
+            articlesContainer.innerHTML = '';
+            
+            pages.forEach(page => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left px-md py-sm rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all flex items-center justify-between group relative overflow-hidden';
+                btn.onclick = () => loadPage(page.filename, btn);
+                btn.innerHTML = `
+                    <span class="truncate pr-sm">${page.label}</span>
+                    <span class="font-mono text-[9px] text-slate-400 group-hover:text-slate-500 transition-colors shrink-0">${page.filename}</span>
+                `;
+                
+                if (page.filename.startsWith('article-')) {
+                    articlesContainer.appendChild(btn);
+                } else {
+                    mainPagesContainer.appendChild(btn);
+                }
+            });
+        }
+
+        // 3. Search filter
+        function filterPages() {
+            const query = document.getElementById('page-search').value.toLowerCase();
+            const filtered = allPages.filter(page => 
+                page.label.toLowerCase().includes(query) || 
+                page.filename.toLowerCase().includes(query)
+            );
+            renderSidebar(filtered);
+        }
+
+        // 4. Load page content details
         function loadPage(filename, clickedBtn) {
-            // Highlight clicked button
-            const buttons = document.querySelectorAll('#page-list button');
-            buttons.forEach(btn => btn.classList.remove('bg-[#1b3022]/10', 'text-[#1b3022]', 'border-l-4', 'border-[#1b3022]'));
-            clickedBtn.classList.add('bg-[#1b3022]/10', 'text-[#1b3022]', 'border-l-4', 'border-[#1b3022]');
+            // Remove active classes
+            const buttons = document.querySelectorAll('aside nav button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-slate-600');
+            });
+            clickedBtn.classList.remove('text-slate-600');
+            clickedBtn.classList.add('active-tab');
 
             currentFilename = filename;
             
-            // Show preview loader
+            // Start loader
             document.getElementById('preview-loader').style.display = 'flex';
             
-            // Set Iframe source
             const iframe = document.getElementById('preview-iframe');
             iframe.src = filename;
             
-            // Wait for iframe to load, then fetch page elements
             iframe.onload = () => {
                 document.getElementById('preview-loader').style.display = 'none';
+                document.getElementById('preview-status-text').innerText = `Editing: ${filename}`;
+                document.getElementById('preview-status-dot').className = "w-2 h-2 rounded-full bg-amber-400 animate-pulse";
                 fetchPageElements(filename);
             };
         }
@@ -186,84 +284,86 @@
                     document.getElementById('editor-actions-footer').style.display = 'block';
                 })
                 .catch(err => {
-                    showToast('Failed to parse page elements.', 'error');
+                    showToast('Failed to fetch element structures.', 'error');
                 });
         }
 
-        // 3. Render editor form in middle panel
+        // 5. Render form inputs
         function renderForm(elements) {
             const container = document.getElementById('editor-container');
             container.innerHTML = '';
             
             if (elements.length === 0) {
                 container.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full text-center text-slate-400">
+                    <div class="flex flex-col items-center justify-center h-full text-center text-slate-400 p-xl">
                         <span class="material-symbols-outlined text-5xl mb-md">info</span>
-                        <p class="text-sm">No editable text elements found on this page.</p>
+                        <p class="text-sm font-semibold text-slate-600">No editable texts found.</p>
+                        <p class="text-xs text-slate-400 mt-xs">This file may be a static template without plain content elements.</p>
                     </div>
                 `;
                 return;
             }
             
-            const headerInfo = document.createElement('div');
-            headerInfo.className = 'mb-lg border-b border-[#1b3022]/10 pb-md';
-            headerInfo.innerHTML = `
-                <h3 class="font-semibold text-lg text-primary">${currentFilename} Elements</h3>
-                <p class="text-xs text-slate-500">Edit values below to see instant previews on the right frame.</p>
+            // Header Page details
+            const topHeader = document.createElement('div');
+            topHeader.className = 'border-b border-slate-100 pb-md mb-md';
+            topHeader.innerHTML = `
+                <h2 class="text-sm font-bold text-slate-800 uppercase tracking-tight">${currentFilename} Contents</h2>
+                <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">Customize plain fields or raw HTML layout nodes below</p>
             `;
-            container.appendChild(headerInfo);
+            container.appendChild(topHeader);
 
             elements.forEach(el => {
-                const formGroup = document.createElement('div');
-                formGroup.className = 'space-y-xs';
+                const card = document.createElement('div');
+                card.className = 'bg-white border border-slate-100 p-md rounded-2xl shadow-[0px_4px_20px_rgba(0,0,0,0.01)] focus-within:border-[#1b3022]/20 focus-within:shadow-[0px_8px_30px_rgba(27,48,34,0.03)] transition-all space-y-sm';
                 
                 const labelRow = document.createElement('div');
                 labelRow.className = 'flex justify-between items-center';
                 
                 const label = document.createElement('label');
-                label.className = 'text-xs font-semibold text-slate-600 uppercase tracking-wide';
+                label.className = 'text-[10px] font-bold text-slate-500 uppercase tracking-wider';
                 label.innerText = el.label;
                 labelRow.appendChild(label);
                 
                 if (el.type === 'html') {
                     const badge = document.createElement('span');
-                    badge.className = 'text-[9px] uppercase bg-amber-500/10 text-amber-700 border border-amber-500/20 px-sm py-0.5 rounded-full font-bold';
+                    badge.className = 'text-[9px] uppercase bg-amber-500/10 text-amber-700 border border-amber-500/20 px-sm py-0.5 rounded-full font-bold tracking-wider scale-90 origin-right';
                     badge.innerText = 'Rich HTML';
                     labelRow.appendChild(badge);
                 }
                 
-                formGroup.appendChild(labelRow);
+                card.appendChild(labelRow);
 
                 let inputEl;
-                if (el.type === 'html' || el.value.length > 50) {
+                if (el.type === 'html' || el.value.length > 60) {
                     inputEl = document.createElement('textarea');
                     inputEl.rows = 4;
-                    inputEl.className = 'w-full bg-white border border-slate-300 rounded-lg p-md text-sm text-slate-700 focus:ring-1 focus:ring-primary outline-none focus:border-primary';
+                    inputEl.className = 'w-full border-slate-200 rounded-xl text-xs text-slate-600 focus:ring-2 focus:ring-[#1b3022]/10 focus:border-[#1b3022] outline-none transition-all resize-none';
                 } else {
                     inputEl = document.createElement('input');
                     inputEl.type = 'text';
-                    inputEl.className = 'w-full bg-white border border-slate-300 rounded-lg px-md py-sm text-sm text-slate-700 focus:ring-1 focus:ring-primary outline-none focus:border-primary';
+                    inputEl.className = 'w-full border-slate-200 rounded-xl text-xs text-slate-600 focus:ring-2 focus:ring-[#1b3022]/10 focus:border-[#1b3022] outline-none transition-all';
                 }
                 
                 inputEl.value = el.value;
                 inputEl.id = `input_${el.id}`;
                 
-                // Real-time live preview update binding
+                // Real-time live updating in iframe preview
                 inputEl.oninput = () => {
                     updateIframeElement(el.tag, el.index, inputEl.value, el.type);
                 };
 
-                formGroup.appendChild(inputEl);
-                container.appendChild(formGroup);
+                card.appendChild(inputEl);
+                container.appendChild(card);
             });
         }
 
-        // 4. Update iframe element directly in DOM
+        // 6. Direct iframe DOM modifier
         function updateIframeElement(tag, index, newValue, type) {
             const iframe = document.getElementById('preview-iframe');
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            
             const targetElements = iframeDoc.querySelectorAll(tag);
+            
             if (index < targetElements.length) {
                 const targetEl = targetElements[index];
                 if (type === 'html') {
@@ -274,25 +374,47 @@
             }
         }
 
-        // 5. Save changes back to file via Flask API
+        // 7. Change Preview Resolution Size
+        function setPreviewSize(device, btn) {
+            // Remove active states
+            const buttons = document.querySelectorAll('.bg-slate-100 button');
+            buttons.forEach(b => {
+                b.classList.remove('bg-white', 'shadow-sm', 'text-slate-800');
+                b.classList.add('text-slate-500');
+            });
+            
+            btn.classList.remove('text-slate-500');
+            btn.classList.add('bg-white', 'shadow-sm', 'text-slate-800');
+
+            const wrapper = document.getElementById('iframe-wrapper');
+            if (device === 'mobile') {
+                wrapper.className = "w-[375px] h-[667px] rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden transition-all duration-300";
+            } else if (device === 'tablet') {
+                wrapper.className = "w-[768px] h-[1024px] rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden transition-all duration-300 max-h-full";
+            } else {
+                wrapper.className = "w-full h-full rounded-2xl shadow-xl border border-slate-200/50 bg-white overflow-hidden transition-all duration-300";
+            }
+        }
+
+        // 8. Commit and save changes via POST
         function savePageChanges() {
             const btn = document.getElementById('save-btn');
             const originalHTML = btn.innerHTML;
             btn.disabled = true;
             btn.innerHTML = `
-                <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                <svg class="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span>Saving & Publishing...</span>
+                <span>Publishing Updates...</span>
             `;
 
             const updates = pageElements.map(el => {
-                const inputVal = document.getElementById(`input_${el.id}`).value;
+                const val = document.getElementById(`input_${el.id}`).value;
                 return {
                     tag: el.tag,
                     index: el.index,
-                    value: inputVal,
+                    value: val,
                     type: el.type
                 };
             });
@@ -313,9 +435,11 @@
                 btn.innerHTML = originalHTML;
                 
                 if (data.status === 'success') {
-                    showToast(data.message, 'success');
-                    // Reload iframe to sync newly saved elements
+                    showToast('Modifications successfully published!', 'success');
+                    // Sync iframe
                     document.getElementById('preview-iframe').contentWindow.location.reload();
+                    document.getElementById('preview-status-text').innerText = `Editing: ${currentFilename}`;
+                    document.getElementById('preview-status-dot').className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
                 } else {
                     showToast(data.error || 'Failed to save changes.', 'error');
                 }
@@ -323,23 +447,28 @@
             .catch(err => {
                 btn.disabled = false;
                 btn.innerHTML = originalHTML;
-                showToast('Failed to reach backend CMS server.', 'error');
+                showToast('Failed to reach server.', 'error');
             });
         }
 
-        // 6. Alert toast helpers
+        // 9. Premium Toast alerts
         function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
             const icon = document.getElementById('toast-icon');
             const text = document.getElementById('toast-text');
+            const badge = document.getElementById('toast-badge');
+            const title = document.getElementById('toast-title');
             
             text.innerText = message;
+            
             if (type === 'error') {
-                icon.innerText = 'error';
-                icon.className = 'material-symbols-outlined text-rose-400';
+                title.innerText = 'Sync Warning';
+                icon.innerText = 'warning';
+                badge.className = 'w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-600';
             } else {
+                title.innerText = 'System Confirmed';
                 icon.innerText = 'check_circle';
-                icon.className = 'material-symbols-outlined text-emerald-400';
+                badge.className = 'w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600';
             }
 
             toast.classList.remove('translate-y-20', 'opacity-0');
