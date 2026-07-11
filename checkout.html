@@ -47,18 +47,7 @@
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col">
     <!-- Clean Header -->
-    <header class="w-full bg-white border-b border-outline-variant py-md px-lg">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-sm">
-                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
-                <img class="w-[180px] h-[48px] sm:w-[240px] sm:h-[64px] md:w-[300px] md:h-[80px] object-contain rounded-md" src="img/DJ_logo.png" alt="DJ's Harvest Logo" />
-            </a>
-            <div class="flex items-center gap-xs text-xs font-label-caps uppercase text-on-surface-variant tracking-wider font-bold">
-                <span class="material-symbols-outlined text-sm">lock</span>
-                <span>Secure Gateway</span>
-            </div>
-        </div>
-    </header>
+    <header id="global-header"></header>
 
     <!-- Main Container -->
     <main class="flex-1 max-w-6xl w-full mx-auto p-lg flex flex-col md:grid md:grid-cols-12 gap-xl">
@@ -307,9 +296,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full bg-white border-t border-outline-variant py-md text-center text-xs text-on-surface-variant mt-xl">
-        <p>&copy; 2026 Himalayan Homestays. All rights reserved.</p>
-    </footer>
+    <footer id="global-footer"></footer>
 
     <!-- Email Simulation Modal Overlay -->
     <div id="email-preview-modal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center hidden p-md">
@@ -809,5 +796,6 @@
 
         });
     </script>
+    <script src="js/components.js"></script>
 </body>
 </html>

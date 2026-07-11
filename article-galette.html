@@ -26,37 +26,7 @@
 <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
 
     <!-- TopNavBar -->
-    <header class="fixed top-0 w-full z-50 glass-header">
-        <nav class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
-            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
-                href="index.html">
-                <img class="w-[180px] h-[48px] sm:w-[240px] sm:h-[64px] md:w-[300px] md:h-[80px] object-contain rounded-md" src="img/DJ_logo.png" alt="DJ's Harvest Logo" />
-            </a>
-            
-            <div class="hidden md:flex items-center gap-xl">
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="stay.html">Stay</a>
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="shop.html">Shop</a>
-                <a class="font-label-caps text-label-caps text-primary font-bold border-b border-primary pb-xs" href="stories.html">Stories</a>
-                
-                <button class="cart-toggle-btn text-on-surface-variant hover:text-primary p-xs relative flex items-center">
-                    <span class="material-symbols-outlined">shopping_bag</span>
-                    <span class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
-                </button>
-
-                <button class="booking-trigger-btn bg-secondary text-on-secondary px-lg py-sm rounded-lg font-button-text text-button-text hover:opacity-80 transition-opacity">Book Now</button>
-            </div>
-            
-            <div class="flex items-center gap-sm md:hidden">
-                <button class="cart-toggle-btn text-on-surface-variant hover:text-primary w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center relative transition-colors">
-                    <span class="material-symbols-outlined text-2xl">shopping_bag</span>
-                    <span class="cart-badge-count absolute top-1 right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
-                </button>
-                <button class="mobile-menu-trigger text-primary w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center transition-colors">
-                    <span class="material-symbols-outlined text-2xl">menu</span>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <header id="global-header"></header>
 
     <!-- Article Wrapper -->
     <main class="pt-3xl">
@@ -192,42 +162,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-tertiary-container">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
-            <div class="col-span-1 md:col-span-2">
-                <span class="font-headline-sm text-headline-sm text-primary mb-md block">DJ's Harvest</span>
-                <p class="text-body-md text-on-surface-variant max-w-sm mb-lg">
-                    Embodying the intersection of Himalayan heritage and ultra-modern luxury. Experience the stillness of mountain life.
-                </p>
-            </div>
-            <div>
-                <span class="font-label-caps text-label-caps text-primary font-bold mb-lg block">Navigate</span>
-                <ul class="space-y-md">
-                    <li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="stay.html">Stay</a></li>
-                    <li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="shop.html">Shop</a></li>
-                    <li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="stories.html">Stories</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="font-label-caps text-label-caps text-primary font-bold mb-lg block">Legal</span>
-                <ul class="space-y-md">
-                    <li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
-                    <li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
-                    <li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Accessibility</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-lg py-lg border-t border-outline-variant flex justify-between items-center">
-            <p class="font-label-caps text-[10px] text-outline">
-                © 2024 DJ's Harvest Himalayan Homestays. All rights reserved.
-            </p>
-            <p class="font-label-caps text-[10px] text-outline flex items-center gap-xs">
-                HANDCRAFTED IN THE HIMALAYAS <span class="material-symbols-outlined text-[12px]">favorite</span>
-            </p>
-        </div>
-    </footer>
+    <footer id="global-footer"></footer>
 
     <!-- Shared Logic & Scripts -->
+    <script src="js/components.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -44,44 +44,7 @@
 <body
     class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
     <!-- Top Navigation Bar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-white/20 shadow-sm">
-        <div class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
-            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
-                href="index.html">
-                <img class="w-[180px] h-[48px] sm:w-[240px] sm:h-[64px] md:w-[300px] md:h-[80px] object-contain rounded-md" src="img/DJ_logo.png" alt="DJ's Harvest Logo" />
-            </a>
-
-            <div class="hidden md:flex items-center gap-xl">
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                    href="stay.html">Stay</a>
-                <a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1"
-                    href="shop.html">Shop</a>
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                    href="stories.html">Stories</a>
-            </div>
-
-            <div class="flex items-center gap-sm">
-                <!-- Search box toggler -->
-                <button class="w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
-                    <span class="material-symbols-outlined text-2xl">search</span>
-                </button>
-
-                <!-- Shopping Bag icon -->
-                <button class="cart-toggle-btn w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center text-on-surface-variant hover:text-primary relative transition-colors cursor-pointer">
-                    <span class="material-symbols-outlined text-2xl">shopping_bag</span>
-                    <span class="cart-badge-count absolute top-1 right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
-                </button>
-
-                <button class="booking-trigger-btn hidden md:block bg-secondary text-on-secondary px-lg py-xs rounded-lg font-button-text text-button-text hover:opacity-80 transition-all active:scale-95">
-                    Book Now
-                </button>
-                <button class="mobile-menu-trigger md:hidden text-primary w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center transition-colors">
-                    <span class="material-symbols-outlined text-2xl">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <header id="global-header"></header>
 
     <!-- Hero Section -->
     <header class="relative pt-3xl md:pt-0 h-[819px] min-h-[600px] flex items-center overflow-hidden">
@@ -552,70 +515,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-surface-container-low w-full rounded-t-xl mt-3xl">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
-            <div class="col-span-1 md:col-span-1">
-                <a class="font-headline-sm text-headline-sm text-primary mb-lg block" href="index.html">Apple
-                    Orchards</a>
-                <p class="text-on-surface-variant font-body-md text-body-md">Sustainably grown, mountain-fresh produce
-                    from the heart of Himachal Pradesh.</p>
-            </div>
-            <div>
-                <h4 class="font-label-caps text-label-caps text-primary mb-lg">The Harvest</h4>
-                <ul class="flex flex-col gap-sm">
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="#">Fresh Apples</a></li>
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="#">Organic Honey</a></li>
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="#">Artisanal Jams</a></li>
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="#">Bulk Orders</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-caps text-label-caps text-primary mb-lg">Journal</h4>
-                <ul class="flex flex-col gap-sm">
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="stories.html">Mountain Life Journal</a></li>
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="stay.html">Stay with Us</a></li>
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="stories.html">Our Heritage</a></li>
-                    <li><a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md"
-                            href="stories.html">Sustainability</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-caps text-label-caps text-primary mb-lg">Join our Orchard Club</h4>
-                <p class="text-on-surface-variant mb-md text-[14px]">Get exclusive early access to the harvest and
-                    stories from the mountains.</p>
-                <form class="flex gap-xs">
-                    <input
-                        class="bg-white border border-outline-variant rounded-lg px-md py-sm w-full text-sm focus:ring-1 focus:ring-primary outline-none"
-                        placeholder="Email address" type="email" required />
-                    <button
-                        class="bg-primary text-on-primary p-sm rounded-lg hover:opacity-90 transition-opacity cursor-pointer flex items-center">
-                        <span class="material-symbols-outlined">send</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div
-            class="max-w-7xl mx-auto px-lg py-lg border-t border-on-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-md">
-            <span class="text-[12px] text-on-surface-variant">© 2024 DJ's Harvest Himalayan Homestays. All rights
-                reserved.</span>
-            <div class="flex gap-lg">
-                <a class="text-[12px] text-on-surface-variant hover:text-primary underline-offset-4 hover:underline"
-                    href="#">Privacy Policy</a>
-                <a class="text-[12px] text-on-surface-variant hover:text-primary underline-offset-4 hover:underline"
-                    href="#">Shipping Policy</a>
-                <a class="text-[12px] text-on-surface-variant hover:text-primary underline-offset-4 hover:underline"
-                    href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
+    <footer id="global-footer"></footer>
 
+    <script src="js/components.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

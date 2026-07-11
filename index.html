@@ -41,47 +41,7 @@
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-sm">
-        <div class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
-            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
-                href="index.html">
-                <img class="w-[180px] h-[48px] sm:w-[240px] sm:h-[64px] md:w-[300px] md:h-[80px] object-contain rounded-md" src="img/DJ_logo.png" alt="DJ's Harvest Logo" />
-            </a>
-
-            <!-- Desktop Links & Actions -->
-            <div class="hidden md:flex items-center gap-xl">
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                    href="stay.html">Stay</a>
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                    href="shop.html">Shop</a>
-                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                    href="stories.html">Stories</a>
-
-                <!-- Shopping Bag Icon with Cart Badge -->
-                <button
-                    class="cart-toggle-btn text-on-surface-variant hover:text-primary p-xs relative flex items-center">
-                    <span class="material-symbols-outlined">shopping_bag</span>
-                    <span
-                        class="cart-badge-count absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
-                </button>
-
-                <button
-                    class="booking-trigger-btn bg-secondary text-on-secondary px-lg py-sm rounded-lg font-button-text text-button-text hover:opacity-80 transition-opacity">Book
-                    Now</button>
-            </div>
-
-            <!-- Mobile Menu Toggle & Cart Icon -->
-            <div class="flex items-center gap-sm md:hidden">
-                <button class="cart-toggle-btn text-on-surface-variant hover:text-primary w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center relative transition-colors">
-                    <span class="material-symbols-outlined text-2xl">shopping_bag</span>
-                    <span class="cart-badge-count absolute top-1 right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
-                </button>
-                <button class="mobile-menu-trigger text-primary w-10 h-10 rounded-full hover:bg-primary/5 active:bg-primary/10 flex items-center justify-center transition-colors">
-                    <span class="material-symbols-outlined text-2xl">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <header id="global-header"></header>
 
 
 
@@ -414,85 +374,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-tertiary-container">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
-            <div class="md:col-span-1">
-                <a class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim"
-                    href="index.html">DJ's Harvest</a>
-                <p class="mt-md font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container">
-                    Sustainably managing Himalayan heritage estates since 1924. Experience the stillness.</p>
-            </div>
-            <div>
-                <h4
-                    class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim mb-lg uppercase tracking-widest">
-                    Stay</h4>
-                <ul class="space-y-sm">
-                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
-                            href="stay.html">Our Cottages</a></li>
-                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
-                            href="stay.html">Group Retreats</a></li>
-                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
-                            href="stay.html">Work-from-Orchard</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4
-                    class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim mb-lg uppercase tracking-widest">
-                    Discover</h4>
-                <ul class="space-y-sm">
-                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
-                            href="shop.html">Orchard Shop</a></li>
-                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
-                            href="stories.html">Stories</a></li>
-                    <li><a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors"
-                            href="stories.html">Mountain Life Journal</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4
-                    class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim mb-lg uppercase tracking-widest">
-                    Connect</h4>
-                <p class="text-sm text-on-surface-variant dark:text-on-tertiary-container mb-md">Kotgarh, Himachal
-                    Pradesh, India</p>
-                <div class="flex gap-md">
-                    <a class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-secondary transition-colors text-primary"
-                        href="#">
-                        <span class="material-symbols-outlined">public</span>
-                    </a>
-                    <a class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-secondary transition-colors text-primary"
-                        href="mailto:harvest@appleorchards.com">
-                        <span class="material-symbols-outlined">mail</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div
-            class="max-w-7xl mx-auto px-lg py-lg border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-md">
-            <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">© 2024 DJ's Harvest Himalayan
-                Homestays. All rights reserved.</p>
-            <div class="flex gap-lg">
-                <a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Privacy Policy</a>
-                <a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
+    <footer id="global-footer"></footer>
 
+    <script src="js/components.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Navbar scroll effect
-            const nav = document.querySelector('nav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    nav.classList.add('py-sm', 'shadow-md');
-                    nav.classList.remove('py-md', 'shadow-sm');
-                } else {
-                    nav.classList.add('py-md', 'shadow-sm');
-                    nav.classList.remove('py-sm', 'shadow-md');
-                }
-            });
+            
 
             // Smooth parallax for hero content
             window.addEventListener('scroll', () => {

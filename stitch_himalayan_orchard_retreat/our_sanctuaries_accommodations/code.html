@@ -136,26 +136,7 @@
 
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
     <!-- TopNavBar -->
-    <header
-        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-white/20 shadow-sm">
-        <nav class="flex justify-between items-center w-full px-lg py-md max-w-7xl mx-auto">
-            <a class="font-headline-md text-headline-md text-primary tracking-tighter hover:opacity-85 transition-opacity"
-                href="index.html">
-                <img class="w-[180px] h-[48px] sm:w-[240px] sm:h-[64px] md:w-[300px] md:h-[80px] object-contain rounded-md" src="img/DJ_logo.png" alt="DJ's Harvest Logo" />
-            </a>
-            <div class="hidden md:flex items-center gap-xl">
-                <a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps"
-                    href="#">Stay</a>
-                <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
-                    href="#">Shop</a>
-                <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
-                    href="#">Stories</a>
-            </div>
-            <button
-                class="bg-secondary text-on-secondary px-lg py-sm rounded-lg font-button-text text-button-text hover:opacity-80 transition-opacity duration-300 active:scale-95">Book
-                Now</button>
-        </nav>
-    </header>
+    <header id="global-header"></header>
     <main class="pt-32 pb-3xl">
         <!-- Hero Section -->
         <section class="max-w-7xl mx-auto px-lg mb-2xl">
@@ -389,52 +370,10 @@
         </button>
     </aside> -->
     <!-- Footer -->
-    <footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-tertiary-container mt-3xl">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg py-3xl max-w-7xl mx-auto">
-            <div class="space-y-md">
-                <div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">DJ's Harvest
-                </div>
-                <p class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container">
-                    Crafting slow-living experiences in the heart of the Himalayas since 1984.
-                </p>
-            </div>
-            <div class="flex flex-col gap-sm">
-                <span class="font-label-caps text-label-caps text-primary mb-xs">Explore</span>
-                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
-                    href="#">Stay</a>
-                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
-                    href="#">Shop</a>
-                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
-                    href="#">Stories</a>
-            </div>
-            <div class="flex flex-col gap-sm">
-                <span class="font-label-caps text-label-caps text-primary mb-xs">Journal</span>
-                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
-                    href="#">Mountain Life Journal</a>
-                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
-                    href="#">Himachal Pradesh</a>
-            </div>
-            <div class="flex flex-col gap-sm">
-                <span class="font-label-caps text-label-caps text-primary mb-xs">Legal</span>
-                <a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors"
-                    href="#">Privacy Policy</a>
-                <div class="pt-md">
-                    <p class="text-[10px] text-on-surface-variant opacity-60">© 2024 DJ's Harvest Himalayan Homestays.
-                        All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer id="global-footer"></footer>
     <script>
         // Micro-interaction for scroll depth and sticky elements
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-md');
-            } else {
-                header.classList.remove('shadow-md');
-            }
-        });
+        
 
         // Simple smooth entrance animation
         document.addEventListener('DOMContentLoaded', () => {
@@ -451,6 +390,7 @@
             });
         });
     </script>
+    <script src="../../js/components.js"></script>
 </body>
 
 </html>
