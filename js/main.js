@@ -34,10 +34,10 @@ function injectDynamicElements() {
     if (!document.getElementById('persistent-booking-bar') && !window.location.pathname.endsWith('checkout.html')) {
         const pbb = document.createElement('aside');
         pbb.id = 'persistent-booking-bar';
-        pbb.className = 'fixed bottom-lg left-1/2 -translate-x-1/2 w-[92%] md:w-[70%] lg:w-[55%] bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-outline-variant/60 shadow-[0px_25px_50px_rgba(0,0,0,0.15)] rounded-2xl p-md z-40 hidden lg:flex flex-row items-center justify-between gap-md';
+        pbb.className = 'fixed bottom-lg left-1/2 -translate-x-1/2 w-[92%] sm:w-[85%] md:w-[75%] lg:w-[55%] bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-outline-variant/60 shadow-[0px_25px_50px_rgba(0,0,0,0.15)] rounded-2xl p-md z-40 flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row items-stretch lg:items-center justify-between gap-md';
         pbb.innerHTML = `
             <!-- Sanctuary Selection -->
-            <div class="flex flex-col gap-xs flex-1">
+            <div class="flex flex-col gap-xs col-span-1 flex-1">
                 <label class="font-label-caps text-[9px] uppercase tracking-wider text-outline font-bold">Select Cabin</label>
                 <select id="bar-sanctuary-select" class="bg-transparent border-0 text-xs font-bold text-primary focus:ring-0 p-0 cursor-pointer outline-none">
                     <option value="luxury-cottage" data-price="450">Heritage Cottage</option>
@@ -47,23 +47,23 @@ function injectDynamicElements() {
                 </select>
             </div>
             <!-- Divider -->
-            <div class="h-8 w-px bg-outline-variant/60"></div>
+            <div class="hidden lg:block h-8 w-px bg-outline-variant/60"></div>
             <!-- Check-in Date -->
-            <div class="flex flex-col gap-xs flex-1">
+            <div class="flex flex-col gap-xs col-span-1 flex-1">
                 <label class="font-label-caps text-[9px] uppercase tracking-wider text-outline font-bold">Check In</label>
                 <input type="date" id="bar-checkin" class="bg-transparent border-0 text-xs font-bold text-primary focus:ring-0 p-0 cursor-pointer outline-none w-full" />
             </div>
             <!-- Divider -->
-            <div class="h-8 w-px bg-outline-variant/60"></div>
+            <div class="hidden lg:block h-8 w-px bg-outline-variant/60"></div>
             <!-- Check-out Date -->
-            <div class="flex flex-col gap-xs flex-1">
+            <div class="flex flex-col gap-xs col-span-1 flex-1">
                 <label class="font-label-caps text-[9px] uppercase tracking-wider text-outline font-bold">Check Out</label>
                 <input type="date" id="bar-checkout" class="bg-transparent border-0 text-xs font-bold text-primary focus:ring-0 p-0 cursor-pointer outline-none w-full" />
             </div>
             <!-- Divider -->
-            <div class="h-8 w-px bg-outline-variant/60"></div>
+            <div class="hidden lg:block h-8 w-px bg-outline-variant/60"></div>
             <!-- Guests Selection -->
-            <div class="flex flex-col gap-xs flex-1">
+            <div class="flex flex-col gap-xs col-span-1 flex-1">
                 <label class="font-label-caps text-[9px] uppercase tracking-wider text-outline font-bold">Guests</label>
                 <select id="bar-guests-select" class="bg-transparent border-0 text-xs font-bold text-primary focus:ring-0 p-0 cursor-pointer outline-none">
                     <option value="1">1 Guest</option>
@@ -72,8 +72,10 @@ function injectDynamicElements() {
                     <option value="4">4 Guests</option>
                 </select>
             </div>
+            <!-- Divider -->
+            <div class="hidden lg:block h-8 w-px bg-outline-variant/60"></div>
             <!-- Search & Book CTA -->
-            <button id="bar-book-btn" class="bg-secondary text-on-secondary px-lg py-sm rounded-xl font-button-text text-button-text uppercase tracking-widest text-xs hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-xs whitespace-nowrap">
+            <button id="bar-book-btn" class="col-span-2 lg:col-span-1 bg-secondary text-on-secondary px-lg py-sm rounded-xl font-button-text text-button-text uppercase tracking-widest text-xs hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-xs whitespace-nowrap">
                 <span class="material-symbols-outlined text-[14px]">search</span> Check Rates
             </button>
         `;
@@ -262,7 +264,7 @@ function injectDynamicElements() {
         widget.className = 'fixed bottom-lg left-lg z-[45] flex flex-col items-start';
         widget.innerHTML = `
             <!-- Chat Card (Hidden initially) -->
-            <div id="whatsapp-overlay-card" class="mb-sm w-[320px] bg-white dark:bg-slate-900 border border-outline-variant shadow-2xl rounded-2xl overflow-hidden transition-all duration-300 transform scale-90 translate-y-10 opacity-0 pointer-events-none origin-bottom-left">
+            <div id="whatsapp-overlay-card" class="mb-sm w-[calc(100vw-48px)] sm:w-[320px] bg-white dark:bg-slate-900 border border-outline-variant shadow-2xl rounded-2xl overflow-hidden transition-all duration-300 transform scale-90 translate-y-10 opacity-0 pointer-events-none origin-bottom-left">
                 <!-- Header -->
                 <div class="bg-[#075E54] text-white p-md flex items-center justify-between">
                     <div class="flex items-center gap-sm">
